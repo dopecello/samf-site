@@ -7,7 +7,7 @@ import Footer from '../components/Footer.astro'
 const {
   title = 'St. Augustine Music Festival',
   description = 'The St. Augustine Music Festival is the largest free classical music festival in the United States. It is held annually in the last two weeks of June.',
-  url,
+  url = 'https://www.staugustinemusicfestival.org',
   image = '/social-preview-image.png',
   author = 'Brian Geertsma and William Locke',
 } = Astro.props
@@ -22,15 +22,7 @@ const {
     <!-- favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <SiteMeta
-      title={title}
-      description={description.substring(0, 100)}
-      url={Astro.site
-        ? `${Astro.site}/${title.toLowerCase().replaceAll(' ', '-')}`
-        : `https://accessible-astro.dev/${title.toLowerCase().replaceAll(' ', '-')}`}
-      image={image}
-      author={author}
-    />
+    <SiteMeta title={title} description={description.substring(0, 100)} url={url} image={image} author={author} />
   </head>
   <body>
     <Header />
