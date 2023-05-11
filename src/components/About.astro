@@ -1,0 +1,44 @@
+---
+import { Media } from 'accessible-astro-components'
+const { imgSrc, reverseImg = false } = Astro.props
+import heroImage from '../../public/SAMFPerformanceNigel.jpeg'
+import { Icon } from 'astro-icon'
+---
+
+<section class="container mx-auto items-center">
+  <div class="my-24 flex w-full flex-wrap items-center justify-center">
+    <div class="flex w-full flex-col items-center justify-center px-6 text-center lg:w-1/2 lg:items-start lg:text-left">
+      <h1 class="mb-8 text-xl font-bold uppercase leading-none tracking-tighter lg:text-3xl">
+        St. Augustine Music Festival
+      </h1>
+      <p class="mb-2 leading-relaxed">
+        The St. Augustine Music Festival produces, performs, and promotes inspiring, world-class music to a diverse
+        audience in an accessible, welcoming environment to enhance the quality of life and further the sense of
+        connection within the community. At SAMF, we entertain, educate, and elevate through music. We entertain our
+        audience with positive, inspiring, and creative musical performances. We educate our audience through lectures
+        and discussions to gather insight into chosen musical selections, gain exposure to new ideas or concepts, and
+        cultivate new talent in schools, organizations, and collaborations. We elevate our audience on the emotional and
+        spiritual levels through the memorable and joyful experience of sharing world-class musical performances.
+      </p>
+      <a
+        href=""
+        class="button my-5 inline-flex h-10 w-2/3 items-center justify-center rounded shadow-md"
+        aria-label="Contact"
+        title="Contact"
+      >
+        Learn More
+      </a>
+    </div>
+    <div class="mt-8 w-full items-center justify-center rounded-xl md:mt-0 md:w-1/2">
+      <div class="flex w-full justify-center">
+        <img
+          class="w-full rounded-lg object-cover object-center shadow-2xl md:max-w-lg"
+          src={heroImage}
+          alt="hero"
+          sizes="(max-width: 800px) 100vw, 620px"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </div>
+</section>
