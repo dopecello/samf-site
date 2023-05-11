@@ -1,22 +1,25 @@
 ---
 import ResponsiveToggle from './ResponsiveToggle.astro'
 import { DarkMode } from 'accessible-astro-components'
+// 412px-732px
 ---
 
 <div id="main-navigation" class="is-desktop py-8">
-  <div class="container items-center">
-    <a href="/" class="flex items-center gap-2 !no-underline">
+  <div class="container">
+    <a href="/" class="flex items-center gap-2 !no-underline" id="logo-title">
       <img src={(await import('../assets/img/logo.svg')).default} alt="SAMF Logo" width="47" height="37" />
       <span class="font-bold uppercase">St. Augustine Music Festival</span>
     </a>
-    <div class="wrapper mb-1">
+    <div class="wrapper mb-1 flex justify-between">
       <nav class="desktop-menu" aria-label="Main navigation desktop">
         <ul class="menu items-baseline">
           <slot />
         </ul>
       </nav>
-      <DarkMode />
-      <ResponsiveToggle />
+      <div class="flex flex-row gap-2 pl-3" id="mobile-menu-icons">
+        <DarkMode />
+        <ResponsiveToggle />
+      </div>
     </div>
     <nav class="mobile-menu" aria-label="Main navigation mobile">
       <ul class="menu">
@@ -214,7 +217,11 @@ import { DarkMode } from 'accessible-astro-components'
       justify-content: center;
       flex-wrap: wrap;
       align-items: center;
+
       @include breakpoint(nav) {
+        justify-content: space-between;
+      }
+      @media (min-width: 417px) and (max-width: 732px) {
         justify-content: space-between;
       }
     }
@@ -393,6 +400,16 @@ import { DarkMode } from 'accessible-astro-components'
         outline: none;
         box-shadow: none;
       }
+    }
+  }
+  @media screen and (min-width: 412px) and (max-width: 732px) {
+    #main-navigation #logo-title {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    #main-navigation #mobile-menu-icons {
+      justify-content: space-between;
     }
   }
 </style>
