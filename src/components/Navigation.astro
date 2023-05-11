@@ -211,8 +211,12 @@ import { DarkMode } from 'accessible-astro-components'
   #main-navigation {
     > .container {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       flex-wrap: wrap;
+      align-items: center;
+      @include breakpoint(nav) {
+        justify-content: space-between;
+      }
     }
 
     &.is-desktop {
