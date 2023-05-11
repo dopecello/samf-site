@@ -1,6 +1,7 @@
 ---
 import CallToAction from './CallToAction.astro'
-
+import peregrineWhite from '../assets/img/peregrine-white.svg'
+import peregrineBlack from '../assets/img/peregrine-black.svg'
 const currentYear = new Date().getFullYear()
 ---
 
@@ -38,8 +39,10 @@ const currentYear = new Date().getFullYear()
   </section>
   <section class="py-4">
     <div class="container flex items-center justify-center">
-      <p class="text-[10px]">
+      <p class="text-[10px] flex flex-row items-center">
         &copy; {currentYear} St. Augustine Music Festival. All Rights Reserved. Powered by Peregrine Pixels
+        <img src={peregrineBlack} alt="The Official Peregrine Pixels Logo" class=" pl-1 h-[1.3rem] w-[1.3rem] block dark:hidden" />
+        <img src={peregrineWhite} alt="The Official Peregrine Pixels Logo" class=" pl-1 h-5 w-5 hidden dark:block text-neutral-100" />
       </p>
     </div>
   </section>
