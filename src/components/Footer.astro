@@ -4,13 +4,45 @@ import CallToAction from './CallToAction.astro'
 const currentYear = new Date().getFullYear()
 ---
 
-<footer>
+<footer class="w-full">
   <CallToAction />
-  <section class="py-8">
-    <div class="container">
-      <p>
-        &copy; {currentYear} St. Augustine Music Festival. All Rights Reserved.
+  <section class="grid w-full grid-cols-3 pb-10" id="navFooter">
+    <div class="mx-auto flex flex-col justify-between" id="contact-footer-section">
+      <div>
+        <h6 class="flex flex-col items-start uppercase">Contact Us</h6>
+        <img src="/" alt="/" />
+      </div>
+      <div class="flex flex-col pt-5 text-xs">
+        <p class="pb-2 font-semibold">St. Augustine Music Festival</p>
+        <p class="pb-2">P.O Box 833</p>
+        <p class="pb-6">St. Augustine, FL 32085-0833</p>
+        <p class="pb-6">904-814-9404</p>
+        <p class="font-semibold">Email SAMF</p>
+      </div>
+    </div>
+    <div class="m-auto">
+      <h6 class="flex flex-col items-center uppercase">Quick Links</h6>
+      <div class="flex flex-col gap-5 pt-5 text-xs">
+        <a href="/">Home</a>
+        <a href="/">Watch & Listen</a>
+        <a href="/">About</a>
+        <a href="/">News</a>
+        <a href="/">Contact</a>
+        <a href="/">Support</a>
+      </div>
+    </div>
+    <div class="flex flex-col">
+      <h6 class="flex justify-start">SAMF News</h6>
+      <p class="pt-5 text-xs">Upcoming Events here.</p>
+    </div>
+  </section>
+  <section class="py-4">
+    <div class="container flex items-center justify-center">
+      <p class="text-[10px]">
+        &copy; {currentYear} St. Augustine Music Festival. All Rights Reserved. Powered by Peregrine Pixels
       </p>
     </div>
   </section>
 </footer>
+
+<style lang="scss"></style>
