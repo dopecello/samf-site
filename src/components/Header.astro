@@ -6,42 +6,39 @@ import { Icon } from 'astro-icon'
 const headerItems = [
   { text: 'Home', href: '/' },
   {
-    text: 'Events',
+    text: 'Watch & Listen',
     submenu: [
-      { text: 'Event Listing', href: 'link' },
-      { text: 'SAMF 2022 Program', href: 'link' },
+      { text: 'Events', href: 'link' },
+      { text: 'SAMF Video Performances', href: 'link' },
+      { text: 'SAMF 2023 Program', href: 'link' },
       { text: 'SAMF Program Notes', href: 'link' },
     ],
   },
   {
-    text: 'Watch & Listen',
-    submenu: [{ text: 'SAMF Video Preformances', href: 'link' }],
-  },
-  {
     text: 'About',
     submenu: [
-      { text: 'The SAMF Story', href: 'link' },
-      { text: 'The SAMF Mission', href: 'link' },
-      { text: 'SAMF Venues', href: 'link' },
-      { text: 'SAMF Spotlight', href: 'link' },
-      { text: 'SAMF Preformers', href: 'link' },
-      { text: 'SAMF Board of Directors', href: 'link' },
+      { text: 'Our Story', href: 'link' },
+      { text: 'Our Mission', href: 'link' },
+      { text: 'Venues', href: 'link' },
+      { text: 'Spotlight Performers', href: 'link' },
+      { text: 'Meet the Musicians', href: 'link' },
+      { text: 'Board of Directors', href: 'link' },
     ],
   },
-  { text: 'SAMF Newsletter', href: 'link' },
+  
+  {
+    text: 'News',
+    submenu: [{ text: 'SAMF Blog', href: 'link' }, { text: 'SAMF Newsletter', href: 'link' }],
+  },
+  { text: 'Contact', href: '/contact' },
   {
     text: 'Support',
     submenu: [
-      { text: 'Donate', href: 'link' },
-      { text: 'Donate', href: 'link' },
+      { text: 'Donate', href: 'https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=LGYJBWLM3XKUA' },
+      { text: 'Sponsor', href: 'link' },
       { text: 'Volunteer', href: 'link' },
     ],
   },
-  {
-    text: 'News',
-    submenu: [{ text: 'SAMF Blog', href: 'link' }],
-  },
-  { text: 'Contact', href: '/contact' },
 ]
 ---
 
@@ -76,13 +73,6 @@ const headerItems = [
         }
       })
     }
-    <li class="menu-item">
-      <a
-        href="https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=LGYJBWLM3XKUA"
-        title="external link"
-        rel="external noopener noreferrer">Donate</a
-      >
-    </li>
   </Navigation>
 </header>
 

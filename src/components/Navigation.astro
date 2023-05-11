@@ -4,14 +4,14 @@ import { DarkMode } from 'accessible-astro-components'
 ---
 
 <div id="main-navigation" class="is-desktop py-8">
-  <div class="container">
+  <div class="container items-center">
     <a href="/" class="flex items-center gap-2 !no-underline">
       <img src={(await import('../assets/img/logo.svg')).default} alt="SAMF Logo" width="47" height="37" />
       <span class="font-bold uppercase">St. Augustine Music Festival</span>
     </a>
-    <div class="wrapper">
+    <div class="wrapper mb-1">
       <nav class="desktop-menu" aria-label="Main navigation desktop">
-        <ul class="menu">
+        <ul class="menu items-baseline">
           <slot />
         </ul>
       </nav>
@@ -280,8 +280,8 @@ import { DarkMode } from 'accessible-astro-components'
         .has-dropdown > button:hover,
         .has-dropdown > button:focus {
           text-decoration: underline;
-          text-decoration-thickness: 1px;
-          text-underline-offset: 7px;
+          text-decoration-thickness: 2px;
+          text-underline-offset: 5px;
         }
 
         .is-active {
