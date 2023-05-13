@@ -38,12 +38,27 @@ const currentYear = new Date().getFullYear()
     </div>
   </section>
   <section class="py-4">
-    <div class="container flex items-center justify-center">
-      <p class="text-[10px] flex flex-row items-center">
-        &copy; {currentYear} St. Augustine Music Festival. All Rights Reserved. Powered by Peregrine Pixels
-        <img src={peregrineBlack} alt="The Official Peregrine Pixels Logo" class=" pl-1 h-[1.3rem] w-[1.3rem] block dark:hidden" />
-        <img src={peregrineWhite} alt="The Official Peregrine Pixels Logo" class=" pl-1 h-5 w-5 hidden dark:block text-neutral-100" />
-      </p>
+    <div class="container flex items-center justify-center sm:justify-between flex-col sm:flex-row">
+      <div>
+        <p class="text-[10px]">
+          &copy; {currentYear} St. Augustine Music Festival. All Rights Reserved.
+        </p>
+      </div>
+      <div class="flex flex-row items-center">
+        <p class="text-[10px]">
+          Powered by Peregrine Pixels
+        </p>
+        <img
+          src={peregrineBlack}
+          alt="The Official Peregrine Pixels Logo"
+          class="block h-[1.3rem] w-[1.3rem] pl-1 dark:hidden"
+        />
+        <img
+          src={peregrineWhite}
+          alt="The Official Peregrine Pixels Logo"
+          class="hidden h-5 w-5 pl-1 text-neutral-100 dark:block"
+        />
+      </div>
     </div>
   </section>
 </footer>
