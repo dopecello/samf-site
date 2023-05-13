@@ -1,0 +1,22 @@
+---
+import { SiteMeta } from '../components/SiteMeta.astro'
+import DefaultLayout from '../layouts/DefaultLayout.astro'
+const {
+  title = 'St. Augustine Music Festival',
+  description = 'The St. Augustine Music Festival is the largest free classical music festival in the United States. It is held annually in the last two weeks of June.',
+  url = 'https://www.staugustinemusicfestival.org',
+  image = '/SAMFPerformanceNigel.jpeg',
+  author = 'Brian Geertsma and William Locke',
+} = Astro.props
+---
+
+<DefaultLayout>
+  <html lang="en" dir="ltr">
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    </head>
+  </html>
+</DefaultLayout>
