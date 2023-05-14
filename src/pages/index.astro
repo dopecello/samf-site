@@ -4,17 +4,18 @@ import Hero from '../components/Hero.astro'
 import Feature from '../components/Feature.astro'
 import Counter from '../components/Counter.astro'
 import ContentMedia from '../components/ContentMedia.astro'
+import CallToAction from '../components/CallToAction.astro'
 ---
 
 <DefaultLayout title="Home">
   <Hero />
   <ContentMedia imgSrc="/SAMFPerformanceNigel.jpeg" reverseImg={true}>
-    <div class="flex flex-col gap-6 items-center">
+    <div class="flex flex-col items-center gap-6">
       <div>
         <h2 class="text-center uppercase lg:text-left">St. Augustine Music Festival</h2>
       </div>
       <div>
-        <p class="lg:text-lg text-md text-center lg:text-left">
+        <p class="text-md text-center lg:text-left lg:text-lg">
           The St. Augustine Music Festival produces, performs, and promotes inspiring, world-class music to a diverse
           audience in an accessible, welcoming environment to enhance the quality of life and further the sense of
           connection within the community. At SAMF, we entertain, educate, and elevate through music. We entertain our
@@ -24,7 +25,7 @@ import ContentMedia from '../components/ContentMedia.astro'
           and spiritual levels through the memorable and joyful experience of sharing world-class musical performances.
         </p>
       </div>
-      <div class="flex justify-center mb-6">
+      <div class="mb-6 flex justify-center">
         <a href="" class="button" aria-label="Learn More" title="Learn More"> Learn More</a>
       </div>
     </div>
@@ -35,23 +36,18 @@ import ContentMedia from '../components/ContentMedia.astro'
         <h2 class="text-center uppercase lg:text-left">Experience the benefits of SAMF</h2>
       </div>
       <div>
-        <p class="lg:text-lg text-md text-center lg:text-left">
-          It has been proven in the scientific and medical fields that listening to classical music results in mental and
-          physical benefits – such as improved sleep quality, reduction of stress, better pain management, and positive
-          effects on mood, productivity, and creativity. Plus, participating in a quality event that promotes a joyful,
-          enriching, and memorable experience close to home in a neighborly environment will deepen and strengthen the bond
-          within the community for years to come.
+        <p class="text-md text-center lg:text-left lg:text-lg">
+          It has been proven in the scientific and medical fields that listening to classical music results in mental
+          and physical benefits – such as improved sleep quality, reduction of stress, better pain management, and
+          positive effects on mood, productivity, and creativity. Plus, participating in a quality event that promotes a
+          joyful, enriching, and memorable experience close to home in a neighborly environment will deepen and
+          strengthen the bond within the community for years to come.
         </p>
       </div>
-      <div class="flex justify-center mb-6">
+      <div class="mb-6 flex justify-center">
         <a href="" class="button" aria-label="Learn More" title="Learn More"> Learn More</a>
       </div>
     </div>
   </ContentMedia>
+  <CallToAction />
 </DefaultLayout>
-
-
-
-
-      
-

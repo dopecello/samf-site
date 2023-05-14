@@ -1,28 +1,33 @@
 ---
-import CallToAction from './CallToAction.astro'
 import peregrineWhite from '../assets/img/peregrine-white.svg'
 import peregrineBlack from '../assets/img/peregrine-black.svg'
+import samfBannerWhite from '../assets/img/samf-banner-white-pl-0.png'
 const currentYear = new Date().getFullYear()
 ---
 
 <footer class="w-full">
-  <CallToAction />
-  <section class="grid w-full grid-cols-3 pb-10" id="navFooter">
-    <div class="mx-auto flex flex-col justify-between" id="contact-footer-section">
-      <div>
-        <h6 class="flex flex-col items-start uppercase">Contact Us</h6>
-        <img src="/" alt="/" />
+  <section class="grid items-start pb-5 sm:mx-10 md:mx-20 sm:pb-10 sm:grid-cols-3" id="navFooter">
+    <div
+      class="pr-5 mx-auto flex flex-col sm:justify-between"
+      id="contact-footer-section"
+    >
+      <div class="flex justify-center sm:block">
+        <h6 class="hidden sm:flex flex-col items-start uppercase">Contact Us</h6>
+        <img src={samfBannerWhite} alt="The Official SAMF banner-logo." />
       </div>
-      <div class="flex flex-col pt-5 text-xs">
+      <div class="flex flex-col sm:pt-5 text-xs">
         <p class="pb-2 font-semibold">St. Augustine Music Festival</p>
-        <p class="pb-2">P.O Box 833</p>
-        <p class="pb-6">St. Augustine, FL 32085-0833</p>
+        <p class="pb-1">P.O Box 833</p>
+        <div class="pb-6">
+          <p class="pb-1">St. Augustine, FL</p>
+          <p>32085-0833</p>
+        </div>
         <p class="pb-6">904-814-9404</p>
         <p class="font-semibold">Email SAMF</p>
       </div>
     </div>
-    <div class="m-auto">
-      <h6 class="flex flex-col items-center uppercase">Quick Links</h6>
+    <div class="hidden sm:block pl-">
+      <h6 class="flex flex-col uppercase">Quick Links</h6>
       <div class="flex flex-col gap-5 pt-5 text-xs">
         <a href="/">Home</a>
         <a href="/">Watch & Listen</a>
@@ -32,22 +37,20 @@ const currentYear = new Date().getFullYear()
         <a href="/">Support</a>
       </div>
     </div>
-    <div class="flex flex-col">
+    <div class="hidden flex-col sm:flex">
       <h6 class="flex justify-start">SAMF News</h6>
       <p class="pt-5 text-xs">Upcoming Events here.</p>
     </div>
   </section>
   <section class="py-4">
-    <div class="container flex items-center justify-center sm:justify-between flex-col sm:flex-row">
+    <div class="container flex flex-col items-center justify-center sm:flex-row sm:justify-between">
       <div>
         <p class="text-[10px]">
           &copy; {currentYear} St. Augustine Music Festival. All Rights Reserved.
         </p>
       </div>
       <div class="flex flex-row items-center">
-        <p class="text-[10px]">
-          Powered by Peregrine Pixels
-        </p>
+        <p class="text-[10px]">Powered by Peregrine Pixels</p>
         <img
           src={peregrineBlack}
           alt="The Official Peregrine Pixels Logo"
