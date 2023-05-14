@@ -5,6 +5,8 @@ import Feature from '../components/Feature.astro'
 import Counter from '../components/Counter.astro'
 import ContentMedia from '../components/ContentMedia.astro'
 import CallToAction from '../components/CallToAction.astro'
+import spotlightPerformer from '../assets/img/jorge-pena.jpg'
+import { Media } from 'accessible-astro-components'
 ---
 
 <DefaultLayout title="Home">
@@ -29,7 +31,7 @@ import CallToAction from '../components/CallToAction.astro'
         <a href="" class="button" aria-label="Learn More" title="Learn More"> Learn More</a>
       </div>
     </div>
-  </ContentMedia>
+  </ContentMedia>.
   <ContentMedia imgSrc="/SAMFPerformanceCellos.jpeg" reverseImg={true}>
     <div class="flex flex-col gap-6">
       <div>
@@ -49,5 +51,42 @@ import CallToAction from '../components/CallToAction.astro'
       </div>
     </div>
   </ContentMedia>
+  <section class="xl:my-[6rem] flex flex-col justify-center" id="content-media">
+    <div class="container pt-10 border-t-[3px] border-neutral-900 dark:border-neutral-100">
+      <div class="grid grid-cols-1 lg:grid-cols-2 items-center">
+        <div class="lg:pr-4 lg:max-w-[90%]">
+          <div class="flex flex-col items-center lg:items-start gap-10 sm:gap-16">
+            <div class="flex flex-col gap-2">
+              <div>
+                <h2 class="text-center uppercase lg:text-left text-4xl">Spotlight Performer</h2>
+              </div>
+              <div class="text-center lg:text-left">
+                <p class="text-2xl uppercase">Jorge A. PEÑA</p>
+                <p class="pt-2 uppercase text-sm">Viola, SAMF Co-Founder and artistic director</p>
+              </div>
+            </div>
+            <div class="flex items-start lg:hidden">
+              <Media class=" w-full p-0 rounded-lg mb-6" src={spotlightPerformer} />
+            </div>
+            <div>
+              <p class="text-md text-center lg:text-left lg:text-lg">
+                A former member of the Kennedy Center Opera House Orchestra, Mr. Peña came to the Jacksonville Symphony
+                Orchestra in 1996. He was born in Honduras and educated in the U.S., attending Columbus State University and
+                earning a degree in performance and chamber music from the Peabody
+              </p>
+            </div>
+          </div>
+          <div class="pt-6 mb-6 flex justify-center">
+            <a href="" class="button" aria-label="Learn More" title="Learn More"> Learn More</a>
+          </div>
+        </div>
+        <div class="lg:flex hidden items-start">
+          <Media class=" w-full p-0 rounded-lg mb-6" src={spotlightPerformer} />
+        </div>
+      </div>
+    </div>
+  </section>
+    
+  
   <CallToAction />
 </DefaultLayout>
