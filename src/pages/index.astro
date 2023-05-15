@@ -8,6 +8,7 @@ import SupportSection from '../components/SupportSection.astro'
 import CallToAction from '../components/CallToAction.astro'
 import spotlightPerformer from '../assets/img/jorge-pena.jpg'
 import { Media } from 'accessible-astro-components'
+import EmailList from '../components/EmailList.astro'
 ---
 
 <DefaultLayout title="Home">
@@ -18,7 +19,7 @@ import { Media } from 'accessible-astro-components'
         <h2 class="text-center uppercase lg:text-left">St. Augustine Music Festival</h2>
       </div>
       <div>
-        <p class="text-md text-center lg:text-left lg:text-lg">
+        <p class="text-base text-center lg:text-left lg:text-lg">
           The St. Augustine Music Festival produces, performs, and promotes inspiring, world-class music to a diverse
           audience in an accessible, welcoming environment to enhance the quality of life and further the sense of
           connection within the community. At SAMF, we entertain, educate, and elevate through music. We entertain our
@@ -32,14 +33,14 @@ import { Media } from 'accessible-astro-components'
         <a href="" class="button" aria-label="Learn More" title="Learn More"> Learn More</a>
       </div>
     </div>
-  </ContentMedia>.
+  </ContentMedia>
   <ContentMedia imgSrc="/SAMFPerformanceCellos.jpeg" reverseImg={true}>
     <div class="flex flex-col gap-6">
       <div>
         <h2 class="text-center uppercase lg:text-left">Experience the benefits of SAMF</h2>
       </div>
       <div>
-        <p class="text-md text-center lg:text-left lg:text-lg">
+        <p class="text-base text-center lg:text-left lg:text-lg">
           It has been proven in the scientific and medical fields that listening to classical music results in mental
           and physical benefits – such as improved sleep quality, reduction of stress, better pain management, and
           positive effects on mood, productivity, and creativity. Plus, participating in a quality event that promotes a
@@ -52,7 +53,7 @@ import { Media } from 'accessible-astro-components'
       </div>
     </div>
   </ContentMedia>
-  <section class="xl:my-[6rem] flex flex-col justify-center" id="content-media">
+  <section class="flex flex-col justify-center mb-4" id="content-media">
     <div class="container pt-10 border-t-[3px] border-neutral-900 dark:border-neutral-100">
       <div class="grid grid-cols-1 lg:grid-cols-2 items-center">
         <div class="lg:pr-4 lg:max-w-[90%]">
@@ -70,14 +71,14 @@ import { Media } from 'accessible-astro-components'
               <Media class=" w-full p-0 rounded-lg mb-6" src={spotlightPerformer} />
             </div>
             <div>
-              <p class="text-md text-center lg:text-left lg:text-lg">
+              <p class="text-base text-center lg:text-left lg:text-lg">
                 A former member of the Kennedy Center Opera House Orchestra, Mr. Peña came to the Jacksonville Symphony
                 Orchestra in 1996. He was born in Honduras and educated in the U.S., attending Columbus State University and
                 earning a degree in performance and chamber music from the Peabody
               </p>
             </div>
           </div>
-          <div class="pt-6 mb-6 flex justify-center">
+          <div class="pt-6 flex justify-center">
             <a href="" class="button" aria-label="Learn More" title="Learn More"> Learn More</a>
           </div>
         </div>
@@ -87,6 +88,7 @@ import { Media } from 'accessible-astro-components'
       </div>
     </div>
   </section>
+  <EmailList />
   <SupportSection />
   <CallToAction />
 </DefaultLayout>

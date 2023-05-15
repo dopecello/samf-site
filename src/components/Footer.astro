@@ -1,7 +1,9 @@
 ---
 import peregrineWhite from '../assets/img/peregrine-white.svg'
 import peregrineBlack from '../assets/img/peregrine-black.svg'
-import samfBannerWhite from '../assets/img/samf-banner-white-pl-0.png'
+import bannerNeutral100 from '../assets/img/samf-banner-logo-nuetral-100.png'
+import bannerNeutral900 from '../assets/img/samf-banner-logo-nuetral-900.png'
+
 const currentYear = new Date().getFullYear()
 ---
 
@@ -13,9 +15,10 @@ const currentYear = new Date().getFullYear()
     >
       <div class="flex justify-center sm:block">
         <h6 class="hidden sm:flex flex-col items-start uppercase">Contact Us</h6>
-        <img src={samfBannerWhite} alt="The Official SAMF banner-logo." />
+        <img src={bannerNeutral100} alt="The Official SAMF banner-logo." class="hidden dark:block h-1/2 w-1/2" />
+        <img src={bannerNeutral900} alt="The Official SAMF banner-logo." class="dark:hidden h-3/4 w-3/4"/>
       </div>
-      <div class="flex flex-col sm:pt-5 text-xs">
+      <div class="flex flex-col sm:pt-5 text-xs text-center sm:text-left">
         <p class="pb-2 font-semibold">St. Augustine Music Festival</p>
         <p class="pb-1">P.O Box 833</p>
         <div class="pb-6">
