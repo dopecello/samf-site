@@ -11,7 +11,9 @@ const { icon = 'mdi:rocket', title = 'Title', href = '/' } = Astro.props
     <p>
       <slot>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, corporis.</slot>
     </p>
-    <a href={href} class="button mt-4">Learn More</a>
+  </div>
+  <div>
+    <a href={href} class="button">Learn More</a>
   </div>
 </div>
 
@@ -19,6 +21,9 @@ const { icon = 'mdi:rocket', title = 'Title', href = '/' } = Astro.props
   @use '../assets/scss/base/breakpoint' as *;
 
   .feature {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     position: relative;
     width: calc(100% - 0.5rem);
     padding: 2rem;
