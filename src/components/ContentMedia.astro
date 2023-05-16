@@ -5,13 +5,13 @@ const { imgSrc, reverseImg = false } = Astro.props
 ---
 
 <section class="flex flex-col justify-center" id="content-media">
-  <div class="container pt-10 border-t-[3px] border-neutral-900 dark:border-neutral-100">
-    <div class="grid grid-cols-1 lg:grid-cols-2 items-center">
-      <div class="lg:pr-4 lg:max-w-[90%]">
+  <div class="container pt-10">
+    <div class="grid grid-cols-1 items-center lg:grid-cols-2">
+      <div class="lg:max-w-[90%] lg:pr-4">
         <slot />
       </div>
       <div class="flex items-start">
-        <Media class=" w-full p-0 rounded-lg mb-10" src={imgSrc} />
+        <Media class="w-full p-0 rounded-lg mb-10" src={imgSrc} />
       </div>
     </div>
   </div>
