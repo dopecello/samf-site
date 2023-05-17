@@ -1,10 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  blocklist: ['container'],
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
     extend: {
-      container: false,
-
       colors: {
         primary: {
           100: 'hsl(45.6, 33.63%, 76.27%)',
