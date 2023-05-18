@@ -6,8 +6,9 @@ const posts = (await getCollection('blog')).sort((a, b) => a.data.pubDate.valueO
 ---
 
 <DefaultLayout>
-  <section>
-    <ul>
+  <section class="container">
+    <h1>Events</h1>
+    <ul class="pt-4">
       {
         posts.map((post) => (
           <li>
