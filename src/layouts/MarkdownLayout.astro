@@ -1,12 +1,20 @@
 ---
 import DefaultLayout from './DefaultLayout.astro'
 
-const { frontmatter } = Astro.props
+const { title, description, pubDate, updatedDate, heroImage } = Astro.props
 ---
 
-<DefaultLayout title={frontmatter.title}>
+<DefaultLayout>
   <div class="container">
     <div class="space-content my-12">
+      <h1 class="text-center">{title}</h1>
+      {
+        heroImage && (
+          <div class="mx-auto w-2/3 p-4">
+            <img src={heroImage} alt={description} class="" />
+          </div>
+        )
+      }
       <slot />
     </div>
   </div>
