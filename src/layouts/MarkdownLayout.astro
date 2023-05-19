@@ -10,7 +10,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props
       <h1 class="text-center">{title}</h1>
       {
         heroImage && (
-          <div class="mx-auto w-2/3 p-4">
+          <div class="mx-auto flex w-2/3 justify-center p-4">
             <img src={heroImage} alt={description} class="" />
           </div>
         )
