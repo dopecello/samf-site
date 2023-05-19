@@ -1,24 +1,38 @@
 ---
 title: 'Juneteenth Recognition Concert'
 description: 'The Ritz Chamber Players will perform a concert in recognition of Juneteenth. The concert will feature music by African American composers. Our special guest for the night will be Ann Marie McPhail, soprano.'
-pubDate: 'Jul 02 2022'
+pubDate: ''
 heroImage: ''
 ---
+
+import { Icon } from 'astro-icon'
 
 <div class="flex flex-col-reverse items-center lg:flex-row justify-between">
     <div>
         <div class="flex flex-col gap-4 max-w-[665px] items-center lg:items-start text-center sm:text-left">
-            **Cathedral Basilica of St. Augustine** | 38 Cathedral Place, St. Augustine, FL 32084
+            **Cathedral Basilica of St. Augustine**
+            
+            38 Cathedral Place, St. Augustine, FL 32084
 
             Monday, **June 19**, 2023 @ 7:30 PM
-
-            <a
-               class="button has-icon color-secondary my-2 w-fit"
-               href="https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=LGYJBWLM3XKUA"
-               target="_blank"
-            >
-            Donate
-            </a>
+            <div class="flex flex-col items-center sm:flex-row sm:gap-6">
+                <a
+                class="button has-icon color-secondary my-2 w-fit"
+                href="https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=LGYJBWLM3XKUA"
+                target="_blank"
+                >
+                <Icon name="ic:baseline-favorite-border" />
+                Donate
+                </a>
+                <a
+                class="button has-icon color-secondary my-2 w-fit"
+                href="/"
+                target="_blank"
+                >
+                <Icon name="icon-park-outline:notes" />
+                Program Notes
+                </a>
+            </div>
             <p class="text-center lg:text-left">The Ritz Chamber Players will perform a concert in recognition of Juneteenth. The concert will feature music by African American composers. Our special guest for the night will be Ann Marie McPhail, soprano.</p>
         </div>
     </div>
@@ -52,4 +66,3 @@ heroImage: ''
     </div>
 
 </div>
-
