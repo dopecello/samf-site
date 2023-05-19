@@ -1,25 +1,55 @@
 ---
-title: 'Using MDX'
-description: 'Lorem ipsum dolor sit amet'
+title: 'Juneteenth Recognition Concert'
+description: 'The Ritz Chamber Players will perform a concert in recognition of Juneteenth. The concert will feature music by African American composers. Our special guest for the night will be Ann Marie McPhail, soprano.'
 pubDate: 'Jul 02 2022'
 heroImage: ''
 ---
 
-This theme comes with the [@astrojs/mdx](https://docs.astro.build/en/guides/integrations-guide/mdx/) integration installed and configured in your `astro.config.mjs` config file. If you prefer not to use MDX, you can disable support by removing the integration from your config file.
+<div class="flex flex-col-reverse items-center lg:flex-row justify-between">
+    <div>
+        <div class="flex flex-col gap-4 max-w-[665px] items-center lg:items-start text-center sm:text-left">
+            **Cathedral Basilica of St. Augustine** | 38 Cathedral Place, St. Augustine, FL 32084
 
-## Why MDX?
+            Monday, **June 19**, 2023 @ 7:30 PM
 
-MDX is a special flavor of Markdown that supports embedded JavaScript & JSX syntax. This unlocks the ability to [mix JavaScript and UI Components into your Markdown content](https://docs.astro.build/en/guides/markdown-content/#mdx-features) for things like interactive charts or alerts.
+            <a
+               class="button has-icon color-secondary my-2 w-fit"
+               href="https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=LGYJBWLM3XKUA"
+               target="_blank"
+            >
+            Donate
+            </a>
+            <p class="text-center lg:text-left">The Ritz Chamber Players will perform a concert in recognition of Juneteenth. The concert will feature music by African American composers. Our special guest for the night will be Ann Marie McPhail, soprano.</p>
+        </div>
+    </div>
+    <div class="mb-6 lg:mb-0">
+        <img src="/event-assets/juneteenth-placehold.png" alt="Celebrate Juneteenth Freedom Day" class="w-[455px] h-[276px]" />
+    </div>
 
-If you have existing content authored in MDX, this integration will hopefully make migrating to Astro a breeze.
+</div>
 
-## Example
+<div class="flex flex-col items-center lg:items-start lg:flex-row custom:justify-center custom:gap-5 post-custom:justify-between post-custom:gap-0 py-8 border-b-2 border-neutral-900 dark:border-neutral-300 mb-10 lg:mb-12">
+    <div class="flex flex-col text-center lg:text-left">
+        ### Featured Artists
+        <div class="flex flex-col items-center sm:items-start sm:flex-row gap-10 my-4">
+            <div>
+                <img src="/event-assets/ritz.jpg" alt="The Ritz Chamber Players" class="w-[300px] h-[300px]" />
+                **The Ritz Chamber Players**
+            </div>
+            <div>
+                <img src="/event-assets/ann-marie-mcphail.png" alt="Ann Marie McPhail" class="w-[200px] h-[300px] pl-7 lg:pl-0" />
+                **Anne Marie McPhail, *Soprano***
+            </div>
+        </div>
+    </div>
+    <div class="flex flex-col sm:text-center lg:text-left pt-6 lg:pt-0">
+        <h3 class="text-center xl:text-left">Program</h3>
+        <div class="flex flex-col gap-6 my-4 text-center post-custom:text-left">
+            <p class="flex flex-col custom:flex-col post-custom:flex-row gap-2"><span><strong>Samuel Colridge-Taylor:</strong></span><span> Five Fantasiestücke, Op. 5</span></p>
+            <p class="flex flex-col custom:flex-col post-custom:flex-row gap-2"><span><strong>Coleridge-Taylor Perkinson:</strong></span><span> String Quartet No. 1, "Calvary"</span></p>
+            <p class="flex flex-col custom:flex-col post-custom:flex-row gap-2"><span><strong>Traditional Folk Songs:</strong></span><span> performed by Anne Marie McPhail</span></p>
+        </div>
+    </div>
 
-Here is how you import and use a UI component inside of MDX.  
-When you open this page in the browser, you should see the clickable button below.
+</div>
 
-## More Links
-
-- [MDX Syntax Documentation](https://mdxjs.com/docs/what-is-mdx)
-- [Astro Usage Documentation](https://docs.astro.build/en/guides/markdown-content/#markdown-and-mdx-pages)
-- **Note:** [Client Directives](https://docs.astro.build/en/reference/directives-reference/#client-directives) are still required to create interactive components. Otherwise, all components in your MDX will render as static HTML (no JavaScript) by default.
