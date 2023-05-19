@@ -7,6 +7,8 @@ module.exports = {
       screens: {
         'custom': { 'raw': '(min-width: 1024px) and (max-width: 1083px)' },
         'post-custom': { 'raw': '(min-width: 1084px)' },
+        'cal': { 'raw': '(min-width: 640px) and (max-width: 728px)' },
+        'p-cal': { 'raw': '(min-width: 729px)' },
       },
       colors: {
         primary: {
