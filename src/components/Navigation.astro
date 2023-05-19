@@ -5,10 +5,10 @@ import { DarkMode } from 'accessible-astro-components'
 ---
 
 <div id="main-navigation" class="is-desktop py-8">
-  <div class="container">
-    <a href="/" class="flex items-center gap-2 !no-underline" id="logo-title">
+  <div class="container flex items-center">
+    <a href="/" class="flex flex-row items-center gap-2 !no-underline" id="logo-title">
       <img src={(await import('../assets/img/logo.svg')).default} alt="SAMF Logo" width="47" height="37" />
-      <span class="font-bold uppercase">St. Augustine Music Festival</span>
+      <span class="font-bold uppercase pb-1">St. Augustine Music Festival</span>
     </a>
     <div class="wrapper mb-1 flex justify-between">
       <nav class="desktop-menu" aria-label="Main navigation desktop">
@@ -222,6 +222,9 @@ import { DarkMode } from 'accessible-astro-components'
         justify-content: space-between;
       }
       @media (min-width: 417px) and (max-width: 732px) {
+        justify-content: space-between;
+      }
+      @media (min-width: 859px) and (max-width: 1023px) {
         justify-content: space-between;
       }
     }
