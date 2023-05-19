@@ -5,9 +5,9 @@ pubDate: 'Jul 02 2022'
 heroImage: ''
 ---
 
-<div class="flex flex-row justify-between">
+<div class="flex flex-col-reverse items-center lg:flex-row justify-between">
     <div>
-        <div class="flex flex-col gap-4 max-w-[665px]">
+        <div class="flex flex-col gap-4 max-w-[665px] items-center lg:items-start text-center sm:text-left">
             **Cathedral Basilica of St. Augustine** | 38 Cathedral Place, St. Augustine, FL 32084
 
             Monday, **June 19**, 2023 @ 7:30 PM
@@ -19,39 +19,37 @@ heroImage: ''
             >
             Donate
             </a>
-            <p>The Ritz Chamber Players will perform a concert in recognition of Juneteenth. The concert will feature music by African American composers. Our special guest for the night will be Ann Marie McPhail, soprano.</p>
+            <p class="text-center lg:text-left">The Ritz Chamber Players will perform a concert in recognition of Juneteenth. The concert will feature music by African American composers. Our special guest for the night will be Ann Marie McPhail, soprano.</p>
         </div>
     </div>
-    <div>
+    <div class="mb-6 lg:mb-0">
         <img src="/event-assets/juneteenth-placehold.png" alt="Celebrate Juneteenth Freedom Day" class="w-[455px] h-[276px]" />
     </div>
 
 </div>
 
-<div class="flex flex-row justify-between py-8 border-b-2 border-neutral-900 dark:border-neutral-300 mb-12">
-    <div class="flex flex-col">
+<div class="flex flex-col items-center lg:items-start lg:flex-row custom:justify-center custom:gap-5 post-custom:justify-between post-custom:gap-0 py-8 border-b-2 border-neutral-900 dark:border-neutral-300 mb-10 lg:mb-12">
+    <div class="flex flex-col text-center lg:text-left">
         ### Featured Artists
-        <div class="flex flex-row gap-10 my-4">
+        <div class="flex flex-col items-center sm:items-start sm:flex-row gap-10 my-4">
             <div>
                 <img src="/event-assets/ritz.jpg" alt="The Ritz Chamber Players" class="w-[300px] h-[300px]" />
                 **The Ritz Chamber Players**
             </div>
             <div>
-                <img src="/event-assets/ann-marie-mcphail.png" alt="Ann Marie McPhail" class="w-[200px] h-[300px]" />
+                <img src="/event-assets/ann-marie-mcphail.png" alt="Ann Marie McPhail" class="w-[200px] h-[300px] pl-7 lg:pl-0" />
                 **Anne Marie McPhail, *Soprano***
             </div>
         </div>
     </div>
-    <div class="flex flex-col">
-        ### Program
-        <div class="flex flex-col gap-3 my-4">
-            **Samuel Colridge-Taylor** - Five Fantasiestücke, Op. 5
-
-            **Coleridge-Taylor Perkinson** - String Quartet No. 1, "Calvary"
-
-            **Traditional Folk Songs** - performed by Anne Marie McPhail
-
+    <div class="flex flex-col sm:text-center lg:text-left pt-6 lg:pt-0">
+        <h3 class="text-center xl:text-left">Program</h3>
+        <div class="flex flex-col gap-6 my-4 text-center post-custom:text-left">
+            <p class="flex flex-col custom:flex-col post-custom:flex-row gap-2"><span><strong>Samuel Colridge-Taylor:</strong></span><span> Five Fantasiestücke, Op. 5</span></p>
+            <p class="flex flex-col custom:flex-col post-custom:flex-row gap-2"><span><strong>Coleridge-Taylor Perkinson:</strong></span><span> String Quartet No. 1, "Calvary"</span></p>
+            <p class="flex flex-col custom:flex-col post-custom:flex-row gap-2"><span><strong>Traditional Folk Songs:</strong></span><span> performed by Anne Marie McPhail</span></p>
         </div>
     </div>
 
 </div>
+
