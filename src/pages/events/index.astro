@@ -9,13 +9,15 @@ const posts = (await getCollection('blog')).sort((a, b) => a.data.pubDate.valueO
   <section class="container">
     <h1>Events</h1>
     <ul class="pt-4">
-      {
-        posts.map((post) => (
-          <li>
-            <a href={`/events/${post.slug}/`}>{post.data.title}</a>
-          </li>
-        ))
-      }
+      <ul>
+        {
+          posts.map((post) => (
+            <li>
+              <a href={`/events/${post.slug}/`}>{post.data.title}</a>
+            </li>
+          ))
+        }
+      </ul>
     </ul>
   </section>
 </DefaultLayout>
