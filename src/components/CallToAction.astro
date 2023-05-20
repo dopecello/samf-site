@@ -17,36 +17,35 @@ const sponsors = [
 ]
 ---
 
-<div class="container pt-10 text-neutral-100 dark:text-neutral-900"></div>
+<div class="container pt-10"></div>
 <div class="container">
   <div class="call-to-action mb-10 flex flex-col items-center gap-12 rounded-xl p-12 md:p-24">
     <h2 class="text-center text-3xl uppercase md:text-5xl">FEATURED SPONSORS & DONORS</h2>
-    <div class="grid grid-cols-4 items-center gap-4">
-      {sponsors.map(({ src, alt }) => <Media src={src} alt={alt} class="object-cover" />)}
+    <div class="grid grid-cols-3 gap-8 overflow-hidden" id="slider">
+      {sponsors.map(({ src, alt }) => <Media src={src} alt={alt} class="slider-item object-fit hidden w-2/3" />)}
     </div>
   </div>
 
-  <style lang="scss">
-    .call-to-action {
-      color: var(--neutral-900);
-      background-image: linear-gradient(40deg, var(--primary-100), var(--secondary-200));
-    }
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var slider = document.getElementById('slider')
+      let allSponsors = Array.from(slider.children)
+      let currentSponsors = allSponsors.slice(0, 3)
+      let remainingSponsors = allSponsors.slice(3)
 
-    .call-to-action a:not(button),
-    .call-to-action a:not(button):visited {
-      padding: 1rem;
-      color: var(--neutral-900);
-      font-weight: bold;
-      border: 3px solid var(--neutral-900);
-      border-radius: 3px;
-      text-decoration: none;
-      transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+      // Display the current sponsors
+      currentSponsors.forEach((item) => item.classList.remove('hidden'))
 
-      &:where(:hover, :focus) {
-        color: var(--neutral-100);
-        background-color: var(--neutral-900);
-        text-decoration: underline;
+      function slide() {
+        let firstItem = currentSponsors.shift()
+        firstItem.classList.add('hidden')
+
+        currentSponsors.push(remainingSponsors.shift())
+        currentSponsors[2].classList.remove('hidden')
+
+        remainingSponsors.push(firstItem)
       }
-    }
-  </style>
+      setInterval(slide, 3000) // Adjust this value to control the speed of the slider
+    })
+  </script>
 </div>
