@@ -4,18 +4,25 @@ const blog = defineCollection({
   // Type-check frontmatter using a schema
   schema: z.object({
     title: z.string(),
+    venue: z.string(),
+    address: z.string(),
+    concertDay: z.string(),
+    concertDate: z.string(),
+    concertTime: z.string(),
     description: z.string(),
-    // Transform string to Date object
-    pubDate: z
-      .string()
-      .or(z.date())
-      .transform((val) => new Date(val)),
-    updatedDate: z
-      .string()
-      .optional()
-      .transform((str) => (str ? new Date(str) : undefined)),
-    heroImage: z.string().optional(),
+    artists: z.array(z.object({
+      name: z.string(),
+      instrument: z.string().optional(),
+      specialGuest: z.boolean(),
+      img: z.string(),
+    })),
+    program: z.array(z.object({
+      composer: z.string(),
+      title: z.string(),
+    })),
+    cardImg: z.string(),
   }),
 })
 
 export const collections = { blog }
+
