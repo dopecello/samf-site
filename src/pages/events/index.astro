@@ -14,7 +14,7 @@ const posts = (await getCollection('blog')).sort((a, b) => a.data.pubDate.valueO
           <div class="relative mb-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             <Card
               url={`/events/${post.slug}/`}
-              img="/event-assets/juneteenth-placehold.png/"
+              img={post.data.cardImg}
               title=""
               children=""
               footer=""
@@ -22,15 +22,25 @@ const posts = (await getCollection('blog')).sort((a, b) => a.data.pubDate.valueO
               <h3 class="mb-2">{post.data.title}</h3>
               <div class="flex flex-col">
                 <div class="mt-3 flex flex-col gap-[6px]">
-                  <p class="font-semibold">The Ritz Chamber Players</p>
-                  <p class="text-xs italic">with special guest</p>
-                  <p class="font-semibold">
-                    Anne Marie McPhail, <i>Soprano</i>
-                  </p>
+                  {
+                    post.data.artists.filter(artist => !artist.specialGuest).map((artist) => (
+                      <p class="font-semibold" id="map-regular-artists">{artist.name}</p>
+                    ))
+                  }
+                  {post.data.artists.some(artist => artist.specialGuest) && (
+                    <p class="text-xs italic" id="render-when-special-artists-exist">with special guest</p>
+                  )}
+                  {
+                    post.data.artists.filter(artist => artist.specialGuest).map((artist) => (
+                      <p class="font-semibold" id="map-special-artists">
+                        {artist.name}, <i>{artist.instrument}</i>
+                      </p>
+                    ))
+                  }
                 </div>
                 <div class="absolute flex flex-col items-center bottom-0 cal:bottom-[2rem] right-0 border-l-2 border-t-2 sm:border-2 border-neutral-900 px-2 sm:m-4 cal:m-1 lg:m-2 cal:px-[0.75rem] sm:px-[0.65rem] sm:py-1 lg:px-3">
-                  <p>June</p>
-                  <p class="text-3xl font-bold">19</p>
+                  <p>{post.data.cardMonth}</p>
+                  <p class="text-3xl font-bold">{post.data.cardDay}</p>
                 </div>
               </div>
             </Card>
@@ -40,5 +50,3 @@ const posts = (await getCollection('blog')).sort((a, b) => a.data.pubDate.valueO
     </ul>
   </section>
 </DefaultLayout>
-
-<!-- 640  729-->
