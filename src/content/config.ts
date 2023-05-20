@@ -21,6 +21,9 @@ const blog = defineCollection({
       title: z.string(),
     })),
     cardImg: z.string(),
+    cardMonth: z.string(),
+    cardDay: z.number(),
+    cardYear: z.number(),
   }),
 })
 
