@@ -6,7 +6,7 @@ const subject = 'New message from SAMF'
 <Layout title="Contact Us">
   <section class="container mx-auto">
     <form action="https://api.web3forms.com/submit" method="POST" class="mx-auto text-left">
-      <input type="hidden" name="access_key" value="795bef11-df67-4a28-93d3-bbe7d6c7dc6" />
+      <input type="hidden" name="access_key" value="795bef11-df67-4a28-93d3-bbe7d6c7dc6e" />
       <input type="hidden" name="subject" value={subject} />
       <div class="mx-6 grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
         <div>
@@ -28,35 +28,26 @@ const subject = 'New message from SAMF'
           </div>
         </div>
         <div class="sm:col-span-2">
-          <div class="my-4">
-            <label for="phone-number" class="block text-sm font-semibold leading-6"> Phone number</label>
-            <div class="flex justify-between">
-              <label for="country" class="sr-only">
-                {' '}Country
-              </label>
-              <select id="country" name="country">
-                <option>US</option>
-                <option>CA</option>
-                <option>EU</option>
-              </select>
-              <input
-                required
-                type="tel"
-                name="phone-number"
-                id="phone-number"
-                autocomplete="tel"
-                class="ml-4 block w-full"
-              />
-            </div>
+          <label for="phone" class="block text-sm font-semibold leading-6">Phone Number</label>
+          <div class="my-4 flex justify-between">
+            <label for="country" class="sr-only">
+              {' '}Country
+            </label>
+            <select id="country" name="country">
+              <option>US</option>
+              <option>CA</option>
+              <option>EU</option>
+            </select>
+            <input required type="email" name="email" id="email" autocomplete="email" class="block w-full" />
           </div>
         </div>
-      </div>
-      <div class="sm:col-span-2">
-        <label for="message" class="block text-sm font-semibold leading-6"> Message</label>
-        <div class="my-4">
-          <textarea required name="message" id="message" rows={4}></textarea>
+        <div class="sm:col-span-2">
+          <label for="message" class="block text-sm font-semibold leading-6"> Message</label>
+          <div class="my-4">
+            <textarea required name="message" id="message" rows={4}></textarea>
+          </div>
+          <button type="submit" class="button mt-4 w-full py-4"> Send Message</button>
         </div>
-        <button type="submit" class="button mt-4 w-full py-4"> Send Message</button>
       </div>
     </form>
   </section>
