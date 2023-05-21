@@ -198,19 +198,33 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
+"bach-baroque-night.mdx": {
+	id: "bach-baroque-night.mdx";
+  slug: "bach-baroque-night";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".mdx"] };
+"brahms-night.mdx": {
+	id: "brahms-night.mdx";
+  slug: "brahms-night";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".mdx"] };
 "junteenth-recognition-concert.mdx": {
 	id: "junteenth-recognition-concert.mdx";
   slug: "junteenth-recognition-concert";
   body: string;
   collection: "blog";
-  data: InferEntrySchema<"blog">
+  data: any
 } & { render(): Render[".mdx"] };
 "summer-night-music.mdx": {
 	id: "summer-night-music.mdx";
   slug: "summer-night-music";
   body: string;
   collection: "blog";
-  data: InferEntrySchema<"blog">
+  data: any
 } & { render(): Render[".mdx"] };
 };
 
@@ -222,5 +236,5 @@ declare module 'astro:content' {
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	type ContentConfig = typeof import("../src/content/config");
+	type ContentConfig = never;
 }

@@ -3,27 +3,27 @@ import { Card } from 'accessible-astro-components'
 import DefaultLayout from '../../layouts/DefaultLayout.astro'
 import { getCollection } from 'astro:content'
 
-const posts = (await getCollection('blog'))
+let posts = await getCollection('blog')
+posts.sort((a, b) => new Date(a.data.sortDate) - new Date(b.data.sortDate))
 ---
+
+<!-- Be careful NOT to format this doucment as it will break some of the formatting if not in the same line! -->
 
 <DefaultLayout>
   <section class="container">
-    <div class="relative mb-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+    <div class="relative mb-4 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
       {
         posts.map((post) => (
-          <div>
-            <Card
-              url={`/events/${post.slug}/`}
-              img={post.data.cardImg}
-              title=''
-              footer=''
-            >
+          <div class="h-[394px]">
+            <Card url={`/events/${post.slug}/`} img={post.data.cardImg} title="" footer="">
               <h3 class="mb-2">{post.data.title}</h3>
               <div class="flex flex-col">
                 <div class="mt-3 flex flex-col gap-[6px]">
                   {
                     post.data.artists.filter(artist => !artist.specialGuest).map((artist) => (
-                      <p class="font-semibold" id="map-regular-artists">{artist.name}, <i>{artist.instrument}</i></p>
+                      <p class="font-semibold" id="map-regular-artists">
+                        {artist.name}{artist.instrument && <>, <i>{artist.instrument}</i></>}
+                      </p>
                     ))
                   }
                   {post.data.artists.some(artist => artist.specialGuest) && (
@@ -32,12 +32,12 @@ const posts = (await getCollection('blog'))
                   {
                     post.data.artists.filter(artist => artist.specialGuest).map((artist) => (
                       <p class="font-semibold" id="map-special-artists">
-                        {artist.name}, <i>{artist.instrument}</i>
+                        {artist.name}{artist.instrument && <>, <i>{artist.instrument}</i></>}
                       </p>
                     ))
                   }
                 </div>
-                <div class="absolute flex flex-col items-center bottom-0 cal:bottom-[2rem] right-0 border-l-2 border-t-2 sm:border-2 border-neutral-900 px-2 sm:m-4 cal:m-1 lg:m-2 cal:px-[0.75rem] sm:px-[0.65rem] sm:py-1 lg:px-3">
+                <div class="absolute bottom-0 right-0 flex flex-col items-center border-l-2 border-t-2 border-neutral-900 px-2 sm:m-4 sm:border-2 sm:px-[0.65rem] sm:py-1 lg:m-2 lg:px-3 cal:bottom-[2rem] cal:m-1 cal:px-[0.75rem]">
                   <p>{post.data.cardMonth}</p>
                   <p class="text-3xl font-bold">{post.data.cardDay}</p>
                 </div>

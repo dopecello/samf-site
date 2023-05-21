@@ -1,42 +1,27 @@
 ---
-title: 'Summer Night Music'
+title: 'A Night of Romance'
 venue: 'Cathedral Basilica of St. Augustine'
 address: '38 Cathedral Place, St. Augustine, FL 32084'
-concertDay: 'Friday'
-concertDate: 'June 23, 2023'
+concertDay: 'Sunday'
+concertDate: 'June 25, 2023'
 concertTime: '7:30 PM'
-sortDate: '2023-06-23'
-description: 'Yukino Miyake joins us by playing a variety of beautiful works by Debussy, Schumann, Beethoven, and more! Ann Marie McPhail will also be joining us to sing a few songs.'
+sortDate: '2023-06-25'
+description: 'This concert represents Romantic-era music with the second "B" of the series - Brahms. Join us for a night of chamber music performed by various chamber ensembles comprised of different combinations of our esteemed SAMF Orchestra.'
 artists:
-  - name: 'Yukino Miyake'
-    instrument: 'Piano'
+  - name: 'SAMF Chamber Ensembles'
+    instrument: ''
     specialGuest: false
-    img: '/event-assets/yukino-miyake.jpg'
-  - name: 'Anne Marie McPhail'
-    instrument: 'Soprano'
-    specialGuest: false
-    img: '/event-assets/ann-marie-mcphail.png'
+    img: '/event-assets/samf-chamber-ens.jpg'
 program:
-  - composer: 'Clara Schumann'
-    title: ['Prelude and Fugue in B-flat Major, Op. 16 No. 2']
-  - composer: 'Ludwig van Beethoven'
-    title: ['Moonlight Sonata']
-  - composer: 'Claude Debussy'
-    title:
-      - 'Clair De Lune from Suite Begamasque'
-      - "Nuit d'etoiles"
-  - composer: 'Mélanie Bonis'
-    title:
-      - 'Près du ruisseau, Op. 9'
-      - 'Omphale, Op. 86'
-      - 'Sevillana, Op. 125'
-  - composer: 'Frédéric Chopin'
-    title: ['Nocturnes Op. 9 No. 1 & 2']
-  - composer: 'Franz Liszt'
-    title: ['Ballade No. 2 in B Minor, S. 171']
-cardImg: '/event-assets/summer-night-music.png/'
+  - composer: 'Richard Strauss'
+    title: ['Till Eulenspiegel, Einmal Anders!']
+  - composer: 'Ernő Dohnányi'
+    title: ['Sextet in C major. Op. 37']
+  - composer: 'Johannes Brahms'
+    title: ['Serenade No. 1 in D, Op. 11']
+cardImg: '/event-assets/brahms-night.png/'
 cardMonth: 'June'
-cardDay: 23
+cardDay: 24
 cardYear: 2023
 ---
 
@@ -91,17 +76,13 @@ import { Icon } from 'astro-icon'
 
 </div>
 
-<div class="flex flex-col items-center lg:items-start lg:flex-row custom:justify-center custom:gap-5 post-custom:justify-start post-custom:gap-[9.25rem] py-8 border-b-2 border-neutral-900 dark:border-neutral-300 mb-10 lg:mb-12">
+<div class="flex flex-col items-center lg:items-start lg:flex-row custom:justify-center custom:gap-5 post-custom:justify-start post-custom:gap-[13.5rem] py-8 border-b-2 border-neutral-900 dark:border-neutral-300 mb-10 lg:mb-12">
     <div class="flex flex-col text-center lg:text-left">
         ### Featured Artists
         <div class="flex flex-col items-center sm:items-start sm:flex-row gap-10 my-4">
             <div>
-                <img src={artists[0].img} alt={artists[0].name} class="w-[200px] h-[300px]" />
-                **{artists[0].name}, *{artists[0].instrument}***
-            </div>
-            <div>
-                <img src={artists[1].img} alt={artists[1].name} class="w-[200px] h-[300px] pl-7 lg:pl-0" />
-                **{artists[1].name}, *{artists[1].instrument}***
+                <img src={artists[0].img} alt={artists[0].name} class="w-[400px] h-[300px]" />
+                **{artists[0].name}**
             </div>
         </div>
     </div>
@@ -116,7 +97,6 @@ import { Icon } from 'astro-icon'
                  ))}
              </div>
             ))}
-            A collection of songs by <strong>Ann Marie McPhail</strong> will also be performed.
         </div>
     </div>
 </div>

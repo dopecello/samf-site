@@ -9,6 +9,7 @@ const blog = defineCollection({
     concertDay: z.string(),
     concertDate: z.string(),
     concertTime: z.string(),
+    sortDate: z.string(),
     description: z.string(),
     artists: z.array(z.object({
       name: z.string(),
