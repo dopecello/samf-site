@@ -18,7 +18,7 @@ const blog = defineCollection({
     })),
     program: z.array(z.object({
       composer: z.string(),
-      title: z.string(),
+      title: z.array(z.string()),
     })),
     cardImg: z.string(),
     cardMonth: z.string(),
