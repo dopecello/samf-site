@@ -226,6 +226,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".mdx"] };
+"musical-metamorphosis.mdx": {
+	id: "musical-metamorphosis.mdx";
+  slug: "musical-metamorphosis";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".mdx"] };
 "summer-night-music.mdx": {
 	id: "summer-night-music.mdx";
   slug: "summer-night-music";
