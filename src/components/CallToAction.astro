@@ -28,14 +28,10 @@ const sponsors = [
           }
         </div>
 
-        <div class="carousel-buttons">
-          <button id="prevBtn" class="button">Prev</button>
-          <button id="nextBtn" class="button">Next</button>
-        </div>
-
         <script>
           const images = Array.from(document.querySelectorAll('.carousel-image'))
-          let currentIndex = 0
+          const randomIndex = Math.floor(Math.random() * images.length)
+          let currentIndex = randomIndex
 
           function updateCarousel() {
             images.forEach((img, index) => {
@@ -43,21 +39,12 @@ const sponsors = [
             })
           }
 
-          document.getElementById('prevBtn').addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + images.length) % images.length
-            updateCarousel()
-          })
-
-          document.getElementById('nextBtn').addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % images.length
-            updateCarousel()
-          })
-
           updateCarousel()
 
           setInterval(() => {
-            document.getElementById('nextBtn').click()
-          }, 3000) // this will "click" the next button every 3 seconds
+            currentIndex = (currentIndex + 1) % images.length
+            updateCarousel()
+          }, 3000) // this will update the carousel every 3 seconds
         </script>
       </div>
     </div>
@@ -93,13 +80,6 @@ const sponsors = [
 
       .carousel-image.active {
         opacity: 1;
-      }
-
-      .carousel-buttons {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        margin-top: 20px;
       }
     </style>
   </div>
