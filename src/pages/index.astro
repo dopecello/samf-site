@@ -10,9 +10,11 @@ import Newsletter from '../components/Newsletter.astro'
 import spotlightPerformer from '../assets/img/jorge-pena.jpg'
 import { Media } from 'accessible-astro-components'
 import EmailList from '../components/EmailList.astro'
+import Carousel from '../components/Carousel.tsx'
 ---
 
 <DefaultLayout title="Home">
+  <Carousel />
   <Hero />
   <ContentMedia imgSrc="/SAMFPerformanceNigel.jpeg" reverseImg={true}>
     <div class="flex flex-col items-center gap-6">
