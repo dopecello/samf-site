@@ -1,27 +1,29 @@
 ---
-title: 'A Night of Romance'
+title: 'A Night with Nigel'
 venue: 'Cathedral Basilica of St. Augustine'
 address: '38 Cathedral Place, St. Augustine, FL 32084'
-concertDay: 'Sunday'
-concertDate: 'June 25, 2023'
+concertDay: 'Monday'
+concertDate: 'July 02, 2023'
 concertTime: '7:30 PM'
-sortDate: '2023-06-25'
-description: 'This concert represents Romantic-era music with the second "B" of the series - Brahms. Join us for a night of chamber music performed by various chamber ensembles comprised of different combinations of our esteemed SAMF Orchestra.'
+sortDate: '2023-07-02'
+description: 'This concert represents Classical-era music with the third "B" of the series - Beethoven. Join us for a night of orchestra music performed by the SAMF with our virtuosic special guest, Nigel Armstrong.'
 artists:
-  - name: 'SAMF Chamber Ensembles'
+  - name: 'The SAMF Orchestra'
     instrument: ''
     specialGuest: false
-    img: '/event-assets/samf-chamber-ens.jpg'
+    img: '/event-assets/samf-chamber-orch.jpg'
+  - name: 'Nigel Armstrong'
+    instrument: 'Violin'
+    specialGuest: true
+    img: '/event-assets/nigel-armstong.jpg'
 program:
-  - composer: 'Richard Strauss'
-    title: ['Till Eulenspiegel, Einmal Anders! (arr. Franz Hasenöhrl)']
-  - composer: 'Ernő Dohnányi'
-    title: ['Sextet in C major. Op. 37']
-  - composer: 'Johannes Brahms'
-    title: ['Serenade No. 1 in D, Op. 11 (Arr. by Jorge Rotter)']
-cardImg: '/event-assets/brahms-night.png/'
-cardMonth: 'June'
-cardDay: 24
+  - composer: 'Ludwig van Beethoven'
+    title: ['Violin Concerto Op. 61 (Rechtman arrangement)']
+  - composer: 'Joseph Haydn'
+    title: [Symphony No. 47 in G major "The Palindrome"']
+cardImg: '/event-assets/beethoven-concert.png/'
+cardMonth: 'July'
+cardDay: 02
 cardYear: 2023
 ---
 
@@ -43,7 +45,7 @@ import { Icon } from 'astro-icon'
 
 <div class="flex flex-col-reverse items-center lg:flex-row justify-between">
     <div>
-        <div class="flex flex-col gap-4 max-w-[560px] items-center lg:items-start text-center sm:text-left">
+        <div class="flex flex-col gap-4 max-w-[665px] items-center lg:items-start text-center sm:text-left">
             **{venue}**
             
             {address}
@@ -71,22 +73,26 @@ import { Icon } from 'astro-icon'
         </div>
     </div>
     <div class="mb-6 lg:mb-0">
-        <img src={cardImg} alt='Summer Night Music' class="w-[550px] h-[309px]" />
+        <img src={cardImg} alt="Celebrate Juneteenth Freedom Day" class="w-[455px] h-[276px]" />
     </div>
 
 </div>
 
-<div class="flex flex-col items-center lg:items-start lg:flex-row custom:justify-center custom:gap-5 post-custom:justify-start post-custom:gap-[13.5rem] py-8 border-b-2 border-neutral-900 dark:border-neutral-300 mb-10 lg:mb-12">
+<div class="flex flex-col items-center lg:items-start lg:flex-row custom:justify-center custom:gap-5 post-custom:justify-start post-custom:gap-0 py-8 border-b-2 border-neutral-900 dark:border-neutral-300 mb-10 lg:mb-12">
     <div class="flex flex-col text-center lg:text-left">
         ### Featured Artists
         <div class="flex flex-col items-center sm:items-start sm:flex-row gap-10 my-4">
             <div>
-                <img src={artists[0].img} alt={artists[0].name} class="w-[400px] h-[300px]" />
+                <img src={artists[0].img} alt={artists[0].name} class="w-[300px] h-[300px]" />
                 **{artists[0].name}**
+            </div>
+            <div>
+                <img src={artists[1].img} alt={artists[1].name} class="w-[400px] h-[300px] lg:pl-0" />
+                **{artists[1].name}, *{artists[1].instrument}***
             </div>
         </div>
     </div>
-    <div class="flex flex-col sm:text-center lg:text-left pt-6 lg:pt-0">
+    <div class="flex flex-col sm:text-center lg:text-left pt-6 lg:pt-0 lg:pl-[5rem]">
         <h3 class="text-center xl:text-left">Program</h3>
         <div class="flex flex-col gap-6 my-4 text-center post-custom:text-left">
             {program.map((programItem, index) => (
@@ -99,4 +105,5 @@ import { Icon } from 'astro-icon'
             ))}
         </div>
     </div>
+
 </div>
