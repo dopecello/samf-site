@@ -28,9 +28,9 @@ const socialLinks = [
 <DefaultLayout>
   <div class="container">
     <div class="space-content prose-lg my-12">
-      <h1 class="text-center">{title}</h1>
-      <div class="flex flex-col lg:flex-row">
+      <div class="flex">
         <div class="lg:w-3/4">
+          <h3 class="border-b-[2px] border-b-neutral-900 dark:border-b-neutral-100">{title}</h3>
           {
             heroImage && (
               <div class="flex w-2/3 justify-center p-4">
@@ -43,7 +43,7 @@ const socialLinks = [
         <div class="ml-24 hidden sm:block sm:w-1/4">
           <div>
             <img src={bannerNeutral100} alt="The Official SAMF banner-logo." class="hidden h-3/4 w-3/4 dark:block" />
-            <img src={bannerNeutral900} alt="The Official SAMF banner-logo." class="w-1/2dark:hidden h-1/2" />
+            <img src={bannerNeutral900} alt="The Official SAMF banner-logo." class="h-3/4 w-3/4 dark:hidden" />
           </div>
           <div class="contact-info space-y-0 text-base">
             <p class="mb-0 font-semibold">St. Augustine Music Festival</p>
@@ -61,6 +61,9 @@ const socialLinks = [
                 </a>
               ))
             }
+          </div>
+          <div class="pt-10">
+            <h6>Latest Posts</h6>
           </div>
         </div>
       </div>
