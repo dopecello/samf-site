@@ -1,0 +1,15 @@
+---
+const { name, title, pic } = Astro.props
+---
+
+<!-- Assuming you have already included the Tailwind CSS stylesheet -->
+<div class="prose-sm my-12">
+  <div class="flex flex-wrap border-b-[2px]">
+    <div class="pr-8">
+      <img src={pic} alt={name} class="rounded-lg" />
+    </div>
+    <div>
+      <slot />
+    </div>
+  </div>
+</div>

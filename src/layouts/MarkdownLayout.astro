@@ -1,21 +1,80 @@
 ---
+import Icon from 'astro-icon'
 import DefaultLayout from './DefaultLayout.astro'
+import bannerNeutral100 from '../assets/img/samf-banner-logo-nuetral-100.png'
+import bannerNeutral900 from '../assets/img/samf-banner-logo-nuetral-900.png'
+const { title, description, heroImage } = Astro.props
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props
+const socialLinks = [
+  {
+    name: 'Facebook',
+    icon: 'mdi:facebook-box',
+    url: 'https://www.facebook.com/staugmusicfest/',
+  },
+  {
+    name: 'Instagram',
+    icon: 'mdi:instagram',
+    url: 'https://www.instagram.com/staugmusicfest/',
+  },
+  {
+    name: 'YouTube',
+    icon: 'mdi:youtube',
+    url: 'https://www.youtube.com/channel/UCDlCP1ESgcS6u2OHAVUGD0g',
+  },
+]
 ---
 
+<!-- Assuming you have already included the Tailwind CSS stylesheet -->
 <DefaultLayout>
   <div class="container">
-    <div class="space-content my-12">
-      <h1 class="text-center">{title}</h1>
-      {
-        heroImage && (
-          <div class="mx-auto flex w-2/3 justify-center p-4">
-            <img src={heroImage} alt={description} class="" />
+    <div class="space-content prose-sm my-12">
+      <div class="flex">
+        <div class="lg:w-3/4">
+          <h3 class="border-b-[2px] border-b-neutral-900 dark:border-b-neutral-100">{title}</h3>
+          <div>
+            <div class="lg:flex">
+              {
+                heroImage && (
+                  <>
+                    <div class="flex justify-center pr-8 lg:block lg:w-2/3">
+                      <img src={heroImage} alt={description} class="rounded-lg" />
+                    </div>
+                  </>
+                )
+              }
+              <div class="flex flex-col">
+                <slot />
+              </div>
+            </div>
           </div>
-        )
-      }
-      <slot />
+        </div>
+        <div class="ml-24 hidden w-1/4 lg:block">
+          <div>
+            <img src={bannerNeutral100} alt="The Official SAMF banner-logo." class="hidden h-3/4 w-3/4 dark:block" />
+            <img src={bannerNeutral900} alt="The Official SAMF banner-logo." class="h-3/4 w-3/4 dark:hidden" />
+          </div>
+          <div class="contact-info space-y-0 text-base">
+            <p class="mb-0 font-semibold">St. Augustine Music Festival</p>
+            <p>P.O Box 833</p>
+            <p>St. Augustine, FL</p>
+            <p>32085-0833</p>
+            <p>904-814-9404</p>
+            <a class="font-semibold" href="mailto:samfnews4u@gmail.com">Email SAMF</a>
+          </div>
+          <div class="flex space-x-2 pt-10">
+            {
+              socialLinks.map((link) => (
+                <a href={link.url} target="_blank">
+                  <Icon name={link.icon} class="h-8 w-8 text-neutral-900 dark:text-neutral-100" />
+                </a>
+              ))
+            }
+          </div>
+          <div class="pt-10">
+            <h6>Latest Posts</h6>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </DefaultLayout>
