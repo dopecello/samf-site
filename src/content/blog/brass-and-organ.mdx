@@ -1,0 +1,131 @@
+---
+title: 'Brass & Organ'
+venue: 'Cathedral Basilica of St. Augustine'
+address: '38 Cathedral Place, St. Augustine, FL 32084'
+concertDay: 'Friday'
+concertDate: 'June 30, 2023'
+concertTime: '7:30 PM'
+sortDate: '2023-06-30'
+description: 'This concert provides a delectible variety of organ and brass music. Tim Tuller and Kevin Karabell lead the charge with their organ and trumpet, respectively. Join us for a night of intimate solo playing and a wide variety of chamber music following this unique organ and trumpet theme.'
+artists:
+  - name: 'SAMF Brass Quintet'
+    instrument: ''
+    specialGuest: false
+    img: '/event-assets/jacoby.jpg'
+  - name: 'Tim Tuller'
+    instrument: 'Organ'
+    specialGuest: true
+    img: '/event-assets/tim-tuller.jpg'
+  - name: 'Kevin Karabell'
+    instrument: 'Trumpet'
+    specialGuest: true
+    img: '/event-assets/kevin-trumpet.jpg'
+program:
+  - composer: 'Eugene Gigout'
+    title:
+      - 'Grand Choeur Dialogue'
+      - 'Toccata'
+  - composer: 'Ewald Victor'
+    title: ['Brass Quintet No. 1 in Bb minor, Op. 5']
+  - composer: 'George Thalben-Ball'
+    title: ['Elegy']
+  - composer: 'Alan Hovhannes'
+    title: ['The Prayer of Saint Gregory']
+  - composer: 'Louis Vierne'
+    title: ['Symphonie No. 1']
+  - composer: 'Eric Ewazen'
+    title: ['Colchester Fantasy']
+  - composer: 'Anthony Dilorenzo'
+    title: ['Fire Dance']
+  - composer: 'Modest Mussorgsky'
+    title: ['Pictures at an Exhibition']
+cardImg: '/event-assets/organ-brass-1.png/'
+cardMonth: 'June'
+cardDay: 30
+cardYear: 2023
+---
+
+export const {
+  venue,
+  address,
+  concertDay,
+  concertDate,
+  concertTime,
+  description,
+  artists,
+  program,
+  cardImg,
+  cardMonth,
+  cardDay,
+  cardYear,
+} = frontmatter
+import { Icon } from 'astro-icon'
+
+<div class="flex flex-col-reverse items-center lg:flex-row justify-between">
+    <div>
+        <div class="flex flex-col gap-4 max-w-[560px] items-center lg:items-start text-center sm:text-left">
+            **{venue}**
+            
+            {address}
+
+            {concertDay}, **{cardMonth} {cardDay}**, {cardYear} @ {concertTime}
+            <div class="flex flex-col items-center sm:flex-row sm:gap-6">
+                <a
+                class="button has-icon color-secondary my-2 w-fit"
+                href="https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=LGYJBWLM3XKUA"
+                target="_blank"
+                >
+                <Icon name="ic:baseline-favorite-border" />
+                Donate
+                </a>
+                <a
+                class="button has-icon color-secondary my-2 w-fit"
+                href="/"
+                target="_blank"
+                >
+                <Icon name="icon-park-outline:notes" />
+                Program Notes
+                </a>
+            </div>
+            <p class="text-center lg:text-left">{description}</p>
+        </div>
+    </div>
+    <div class="mb-6 lg:mb-0">
+        <img src={cardImg} alt='Summer Night Music' class="w-[550px] h-[309px]" />
+    </div>
+
+</div>
+
+<div class="mb-8 flex flex-col items-center pt-8 lg:mb-12 lg:flex-row lg:items-start custom:justify-center custom:gap-5 post-custom:justify-start">
+  <div class="flex flex-col text-center lg:text-left">
+    ### Featured Artists
+    <div class="my-4 flex flex-col items-center gap-10 sm:flex-row sm:items-start">
+      <div>
+        <img src={artists[0].img} alt={artists[0].name} class="h-[300px] w-[400px]" />
+        **{artists[0].name}**
+      </div>
+      <div>
+        <img src={artists[1].img} alt={artists[1].name} class="h-[300px] w-[400px]" />
+        **{artists[1].name}**, {artists[1].instrument}
+      </div>
+      <div>
+        <img src={artists[2].img} alt={artists[2].name} class="h-[300px] w-[240px]" />
+        **{artists[2].name}**, {artists[2].instrument}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="flex flex-col sm:text-center lg:pt-0 mb-8 lg:text-left border-b-2 border-neutral-900 dark:border-neutral-300">
+  <h3 class="text-center lg:text-left">Program</h3>
+  <div class="my-4 flex flex-col gap-6 lg:grid lg:grid-cols-2 text-center custom:text-left post-custom:text-left">
+    {program.map((programItem, index) => (
+      <div key={index}>
+        <strong>{programItem.composer}</strong>
+        {programItem.title.map((titleItem, titleIndex) => (
+          <p key={titleIndex}>{titleItem}</p>
+        ))}
+      </div>
+    ))}
+  </div>
+</div>

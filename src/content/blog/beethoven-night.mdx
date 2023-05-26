@@ -1,31 +1,29 @@
 ---
-title: 'Juneteenth Recognition Concert'
+title: 'A Night with Nigel'
 venue: 'Cathedral Basilica of St. Augustine'
 address: '38 Cathedral Place, St. Augustine, FL 32084'
 concertDay: 'Monday'
-concertDate: 'June 19, 2023'
+concertDate: 'July 02, 2023'
 concertTime: '7:30 PM'
-sortDate: '2023-06-19'
-description: 'The Ritz Chamber Players will perform a concert in recognition of Juneteenth. The concert will feature music by African American composers. Our special guest for the night will be Ann Marie McPhail, soprano.'
+sortDate: '2023-07-02'
+description: 'This concert represents Classical-era music with the third "B" of the series - Beethoven. Join us for a night of orchestra music performed by the SAMF with our virtuosic special guest, Nigel Armstrong.'
 artists:
-  - name: 'The Ritz Chamber Players'
+  - name: 'The SAMF Orchestra'
     instrument: ''
     specialGuest: false
-    img: '/event-assets/ritz.jpg'
-  - name: 'Anne Marie McPhail'
-    instrument: 'Soprano'
+    img: '/event-assets/samf-chamber-orch.jpg'
+  - name: 'Nigel Armstrong'
+    instrument: 'Violin'
     specialGuest: true
-    img: '/event-assets/ann-marie-mcphail.png'
+    img: '/event-assets/nigel-armstong.jpg'
 program:
-  - composer: 'Samuel Colridge-Taylor'
-    title: ['Five Fantasiestücke, op. 5']
-  - composer: 'Coleridge-Taylor Perkinson'
-    title: ['String Quartet No. 1, "Calvary"']
-  - composer: 'Traditional Folk Songs'
-    title: ['performed by Anne Marie McPhail']
-cardImg: '/event-assets/juneteenth-placehold.png/'
-cardMonth: 'June'
-cardDay: 19
+  - composer: 'Ludwig van Beethoven'
+    title: ['Violin Concerto Op. 61 (Rechtman arrangement)']
+  - composer: 'Joseph Haydn'
+    title: [Symphony No. 47 in G major "The Palindrome"']
+cardImg: '/event-assets/beethoven-concert.png/'
+cardMonth: 'July'
+cardDay: 02
 cardYear: 2023
 ---
 
@@ -80,7 +78,7 @@ import { Icon } from 'astro-icon'
 
 </div>
 
-<div class="flex flex-col items-center lg:items-start lg:flex-row custom:justify-center custom:gap-5 post-custom:justify-between post-custom:gap-0 py-8 border-b-2 border-neutral-900 dark:border-neutral-300 mb-10 lg:mb-12">
+<div class="flex flex-col items-center lg:items-start lg:flex-row custom:justify-center custom:gap-5 post-custom:justify-start post-custom:gap-0 py-8 border-b-2 border-neutral-900 dark:border-neutral-300 mb-10 lg:mb-12">
     <div class="flex flex-col text-center lg:text-left">
         ### Featured Artists
         <div class="flex flex-col items-center sm:items-start sm:flex-row gap-10 my-4">
@@ -89,28 +87,23 @@ import { Icon } from 'astro-icon'
                 **{artists[0].name}**
             </div>
             <div>
-                <img src={artists[1].img} alt={artists[1].name} class="w-[200px] h-[300px] pl-7 lg:pl-0" />
+                <img src={artists[1].img} alt={artists[1].name} class="w-[400px] h-[300px] lg:pl-0" />
                 **{artists[1].name}, *{artists[1].instrument}***
             </div>
         </div>
     </div>
-    <div class="flex flex-col sm:text-center lg:text-left pt-6 lg:pt-0">
+    <div class="flex flex-col sm:text-center lg:text-left pt-6 lg:pt-0 lg:pl-[5rem]">
         <h3 class="text-center xl:text-left">Program</h3>
-        <div class="flex flex-col sm:text-center lg:text-left pt-6 lg:pt-0">
-    <h3 class="text-center xl:text-left">Program</h3>
-    <div class="flex flex-col gap-6 my-4 text-center lg:text-left">
-        {program.map((programItem, index) => (
-            <div key={index} class="lg:flex lg:justify-between">
-                <strong>{programItem.composer}:</strong>
-                <div class="lg:pl-6">
-                    {programItem.title.map((titleItem, titleIndex) => (
-                        <p key={titleIndex} class="lg:text-right">{titleItem}</p>
-                    ))}
-                </div>
-            </div>
-        ))}
-    </div>
-</div>
+        <div class="flex flex-col gap-6 my-4 text-center post-custom:text-left">
+            {program.map((programItem, index) => (
+                 <div key={index}>
+                 <strong>{programItem.composer}</strong>
+                {programItem.title.map((titleItem, titleIndex) => (
+                 <p key={titleIndex}>{titleItem}</p>
+                 ))}
+             </div>
+            ))}
+        </div>
     </div>
 
 </div>

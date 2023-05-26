@@ -1,31 +1,42 @@
 ---
-title: 'Juneteenth Recognition Concert'
+title: 'Summer Night Music'
 venue: 'Cathedral Basilica of St. Augustine'
 address: '38 Cathedral Place, St. Augustine, FL 32084'
-concertDay: 'Monday'
-concertDate: 'June 19, 2023'
+concertDay: 'Friday'
+concertDate: 'June 23, 2023'
 concertTime: '7:30 PM'
-sortDate: '2023-06-19'
-description: 'The Ritz Chamber Players will perform a concert in recognition of Juneteenth. The concert will feature music by African American composers. Our special guest for the night will be Ann Marie McPhail, soprano.'
+sortDate: '2023-06-23'
+description: 'Yukino Miyake joins us by playing a variety of beautiful works by Debussy, Schumann, Beethoven, and more! Ann Marie McPhail will also be joining us to sing a few songs.'
 artists:
-  - name: 'The Ritz Chamber Players'
-    instrument: ''
+  - name: 'Yukino Miyake'
+    instrument: 'Piano'
     specialGuest: false
-    img: '/event-assets/ritz.jpg'
+    img: '/event-assets/yukino-miyake.jpg'
   - name: 'Anne Marie McPhail'
     instrument: 'Soprano'
-    specialGuest: true
+    specialGuest: false
     img: '/event-assets/ann-marie-mcphail.png'
 program:
-  - composer: 'Samuel Colridge-Taylor'
-    title: ['Five Fantasiestücke, op. 5']
-  - composer: 'Coleridge-Taylor Perkinson'
-    title: ['String Quartet No. 1, "Calvary"']
-  - composer: 'Traditional Folk Songs'
-    title: ['performed by Anne Marie McPhail']
-cardImg: '/event-assets/juneteenth-placehold.png/'
+  - composer: 'Clara Schumann'
+    title: ['Prelude and Fugue in B-flat Major, Op. 16 No. 2']
+  - composer: 'Ludwig van Beethoven'
+    title: ['Moonlight Sonata']
+  - composer: 'Claude Debussy'
+    title:
+      - 'Clair De Lune from Suite Begamasque'
+      - "Nuit d'etoiles"
+  - composer: 'Mélanie Bonis'
+    title:
+      - 'Près du ruisseau, Op. 9'
+      - 'Omphale, Op. 86'
+      - 'Sevillana, Op. 125'
+  - composer: 'Frédéric Chopin'
+    title: ['Nocturnes Op. 9 No. 1 & 2']
+  - composer: 'Franz Liszt'
+    title: ['Ballade No. 2 in B Minor, S. 171']
+cardImg: '/event-assets/summer-night-music.png/'
 cardMonth: 'June'
-cardDay: 19
+cardDay: 23
 cardYear: 2023
 ---
 
@@ -47,7 +58,7 @@ import { Icon } from 'astro-icon'
 
 <div class="flex flex-col-reverse items-center lg:flex-row justify-between">
     <div>
-        <div class="flex flex-col gap-4 max-w-[665px] items-center lg:items-start text-center sm:text-left">
+        <div class="flex flex-col gap-4 max-w-[560px] items-center lg:items-start text-center sm:text-left">
             **{venue}**
             
             {address}
@@ -75,18 +86,18 @@ import { Icon } from 'astro-icon'
         </div>
     </div>
     <div class="mb-6 lg:mb-0">
-        <img src={cardImg} alt="Celebrate Juneteenth Freedom Day" class="w-[455px] h-[276px]" />
+        <img src={cardImg} alt='Summer Night Music' class="w-[550px] h-[309px]" />
     </div>
 
 </div>
 
-<div class="flex flex-col items-center lg:items-start lg:flex-row custom:justify-center custom:gap-5 post-custom:justify-between post-custom:gap-0 py-8 border-b-2 border-neutral-900 dark:border-neutral-300 mb-10 lg:mb-12">
+<div class="flex flex-col items-center lg:items-start lg:flex-row custom:justify-center custom:gap-5 post-custom:justify-start post-custom:gap-[9.25rem] py-8 border-b-2 border-neutral-900 dark:border-neutral-300 mb-10 lg:mb-12">
     <div class="flex flex-col text-center lg:text-left">
         ### Featured Artists
         <div class="flex flex-col items-center sm:items-start sm:flex-row gap-10 my-4">
             <div>
-                <img src={artists[0].img} alt={artists[0].name} class="w-[300px] h-[300px]" />
-                **{artists[0].name}**
+                <img src={artists[0].img} alt={artists[0].name} class="w-[200px] h-[300px]" />
+                **{artists[0].name}, *{artists[0].instrument}***
             </div>
             <div>
                 <img src={artists[1].img} alt={artists[1].name} class="w-[200px] h-[300px] pl-7 lg:pl-0" />
@@ -96,21 +107,16 @@ import { Icon } from 'astro-icon'
     </div>
     <div class="flex flex-col sm:text-center lg:text-left pt-6 lg:pt-0">
         <h3 class="text-center xl:text-left">Program</h3>
-        <div class="flex flex-col sm:text-center lg:text-left pt-6 lg:pt-0">
-    <h3 class="text-center xl:text-left">Program</h3>
-    <div class="flex flex-col gap-6 my-4 text-center lg:text-left">
-        {program.map((programItem, index) => (
-            <div key={index} class="lg:flex lg:justify-between">
-                <strong>{programItem.composer}:</strong>
-                <div class="lg:pl-6">
-                    {programItem.title.map((titleItem, titleIndex) => (
-                        <p key={titleIndex} class="lg:text-right">{titleItem}</p>
-                    ))}
-                </div>
-            </div>
-        ))}
+        <div class="flex flex-col gap-6 my-4 text-center post-custom:text-left">
+            {program.map((programItem, index) => (
+                 <div key={index}>
+                 <strong>{programItem.composer}</strong>
+                {programItem.title.map((titleItem, titleIndex) => (
+                 <p key={titleIndex}>{titleItem}</p>
+                 ))}
+             </div>
+            ))}
+            A collection of songs by <strong>Ann Marie McPhail</strong> will also be performed.
+        </div>
     </div>
-</div>
-    </div>
-
 </div>

@@ -1,0 +1,102 @@
+---
+title: 'Bach Baroque Night'
+venue: 'Cathedral Basilica of St. Augustine'
+address: '38 Cathedral Place, St. Augustine, FL 32084'
+concertDay: 'Saturday'
+concertDate: 'June 24, 2023'
+concertTime: '7:30 PM'
+sortDate: '2023-06-24'
+description: 'This concert celebrates both Bach and the granduer of Baroque music as we kick off the first night in our 3 Bs Series. The SAMF Chamber Orchestra makes its season debut.'
+artists:
+  - name: 'The SAMF Orchestra'
+    instrument: ''
+    specialGuest: false
+    img: '/event-assets/samf-chamber-orch.jpg'
+program:
+  - composer: 'Samuel Coleridge-Taylor'
+    title: ['4 Novelletten for Strings, Op. 52']
+  - composer: 'J.S. Bach'
+    title: ['Brandenburg Concerto No. 2 in F Major']
+  - composer: 'Felix Mendelssohn'
+    title: ['String Symphony No. 11 in F Major']
+cardImg: '/event-assets/bach-night.png/'
+cardMonth: 'June'
+cardDay: 24
+cardYear: 2023
+---
+
+export const {
+  venue,
+  address,
+  concertDay,
+  concertDate,
+  concertTime,
+  description,
+  artists,
+  program,
+  cardImg,
+  cardMonth,
+  cardDay,
+  cardYear,
+} = frontmatter
+import { Icon } from 'astro-icon'
+
+<div class="flex flex-col-reverse items-center lg:flex-row justify-between">
+    <div>
+        <div class="flex flex-col gap-4 max-w-[560px] items-center lg:items-start text-center sm:text-left">
+            **{venue}**
+            
+            {address}
+
+            {concertDay}, **{cardMonth} {cardDay}**, {cardYear} @ {concertTime}
+            <div class="flex flex-col items-center sm:flex-row sm:gap-6">
+                <a
+                class="button has-icon color-secondary my-2 w-fit"
+                href="https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=LGYJBWLM3XKUA"
+                target="_blank"
+                >
+                <Icon name="ic:baseline-favorite-border" />
+                Donate
+                </a>
+                <a
+                class="button has-icon color-secondary my-2 w-fit"
+                href="/"
+                target="_blank"
+                >
+                <Icon name="icon-park-outline:notes" />
+                Program Notes
+                </a>
+            </div>
+            <p class="text-center lg:text-left">{description}</p>
+        </div>
+    </div>
+    <div class="mb-6 lg:mb-0">
+        <img src={cardImg} alt='Summer Night Music' class="w-[550px] h-[309px]" />
+    </div>
+
+</div>
+
+<div class="flex flex-col items-center lg:items-start lg:flex-row custom:justify-center custom:gap-5 post-custom:justify-start post-custom:gap-[13.5rem] py-8 border-b-2 border-neutral-900 dark:border-neutral-300 mb-10 lg:mb-12">
+    <div class="flex flex-col text-center lg:text-left">
+        ### Featured Artists
+        <div class="flex flex-col items-center sm:items-start sm:flex-row gap-10 my-4">
+            <div>
+                <img src={artists[0].img} alt={artists[0].name} class="w-[400px] h-[300px]" />
+                **{artists[0].name}**
+            </div>
+        </div>
+    </div>
+    <div class="flex flex-col sm:text-center lg:text-left pt-6 lg:pt-0">
+        <h3 class="text-center xl:text-left">Program</h3>
+        <div class="flex flex-col gap-6 my-4 text-center post-custom:text-left">
+            {program.map((programItem, index) => (
+                 <div key={index}>
+                 <strong>{programItem.composer}</strong>
+                {programItem.title.map((titleItem, titleIndex) => (
+                 <p key={titleIndex}>{titleItem}</p>
+                 ))}
+             </div>
+            ))}
+        </div>
+    </div>
+</div>
