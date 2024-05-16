@@ -9,6 +9,7 @@ import CallToAction from '../components/CallToAction.astro'
 import Newsletter from '../components/Newsletter.astro'
 import spotlightPerformer from '../assets/img/jorge-pena.jpg'
 import { Media } from 'accessible-astro-components'
+import { Image } from 'astro:assets'
 import EmailList from '../components/EmailList.astro'
 ---
 
@@ -68,7 +69,7 @@ import EmailList from '../components/EmailList.astro'
               </div>
             </div>
             <div class="flex items-start lg:hidden">
-              <Media class="w-full p-0 rounded-lg mb-6" src={spotlightPerformer} />
+              <Media class="mb-6 w-full rounded-lg p-0" src={spotlightPerformer} />
             </div>
             <div>
               <p class="text-center text-base lg:text-left lg:text-lg">
@@ -83,7 +84,7 @@ import EmailList from '../components/EmailList.astro'
           </div>
         </div>
         <div class="hidden items-start lg:flex">
-          <Media class="w-full p-0 rounded-lg mb-6" src={spotlightPerformer} />
+          <Image class="mb-6 w-full rounded-lg p-0" src={spotlightPerformer} alt="Jorge A. PEÑA" />
         </div>
       </div>
     </div>
