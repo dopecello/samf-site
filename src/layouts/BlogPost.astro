@@ -1,6 +1,7 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro'
 import type { CollectionEntry } from 'astro:content'
+import { Image } from 'astro:assets'
 
 type Props = CollectionEntry<'blog'>['data']
 
@@ -9,9 +10,8 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props
 
 <DefaultLayout>
   <article>
-    {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
+    {heroImage && <Image width={720} height={360} src={heroImage} alt="" />}
     <h1 class="container mb-5 text-center lg:text-left">{title}</h1>
     <slot />
   </article>
 </DefaultLayout>
-

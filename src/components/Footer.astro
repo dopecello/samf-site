@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets'
 import peregrineWhite from '../assets/img/peregrine-white.svg'
 import peregrineBlack from '../assets/img/peregrine-black.svg'
 import bannerNeutral100 from '../assets/img/samf-banner-logo-nuetral-100.png'
@@ -8,17 +9,14 @@ const currentYear = new Date().getFullYear()
 ---
 
 <footer class="w-full">
-  <section class="grid items-start pb-5 container sm:pb-10 sm:grid-cols-3" id="navFooter">
-    <div
-      class="pr-5 mx-auto flex flex-col sm:justify-between"
-      id="contact-footer-section"
-    >
+  <section class="container grid items-start pb-5 sm:grid-cols-3 sm:pb-10" id="navFooter">
+    <div class="mx-auto flex flex-col pr-5 sm:justify-between" id="contact-footer-section">
       <div class="flex justify-center sm:block">
-        <h6 class="hidden sm:flex flex-col items-start uppercase">Contact Us</h6>
-        <img src={bannerNeutral100} alt="The Official SAMF banner-logo." class="hidden dark:block h-1/2 w-1/2" />
-        <img src={bannerNeutral900} alt="The Official SAMF banner-logo." class="dark:hidden h-3/4 w-3/4"/>
+        <h6 class="hidden flex-col items-start uppercase sm:flex">Contact Us</h6>
+        <Image src={bannerNeutral100} alt="The Official SAMF banner-logo." class="hidden h-1/2 w-1/2 dark:block" />
+        <Image src={bannerNeutral900} alt="The Official SAMF banner-logo." class="h-3/4 w-3/4 dark:hidden" />
       </div>
-      <div class="flex flex-col sm:pt-5 text-xs text-center sm:text-left">
+      <div class="flex flex-col text-center text-xs sm:pt-5 sm:text-left">
         <p class="pb-2 font-semibold">St. Augustine Music Festival</p>
         <p class="pb-1">P.O Box 833</p>
         <div class="pb-6">
@@ -29,7 +27,7 @@ const currentYear = new Date().getFullYear()
         <p class="font-semibold">Email SAMF</p>
       </div>
     </div>
-    <div class="hidden sm:block pl-">
+    <div class="pl- hidden sm:block">
       <h6 class="flex flex-col uppercase">Quick Links</h6>
       <div class="flex flex-col gap-5 pt-5 text-xs">
         <a href="/">Home</a>
@@ -54,12 +52,12 @@ const currentYear = new Date().getFullYear()
       </div>
       <div class="flex flex-row items-center">
         <p class="text-[10px]">Powered by Peregrine Pixels</p>
-        <img
+        <Image
           src={peregrineBlack}
           alt="The Official Peregrine Pixels Logo"
           class="block h-[1.3rem] w-[1.3rem] pl-1 dark:hidden"
         />
-        <img
+        <Image
           src={peregrineWhite}
           alt="The Official Peregrine Pixels Logo"
           class="hidden h-5 w-5 pl-1 text-neutral-100 dark:block"

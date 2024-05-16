@@ -11,16 +11,20 @@ const blog = defineCollection({
     concertTime: z.string(),
     sortDate: z.string(),
     description: z.string(),
-    artists: z.array(z.object({
-      name: z.string(),
-      instrument: z.string().optional(),
-      specialGuest: z.boolean(),
-      img: z.string(),
-    })),
-    program: z.array(z.object({
-      composer: z.string(),
-      title: z.array(z.string()),
-    })),
+    artists: z.array(
+      z.object({
+        name: z.string(),
+        instrument: z.string().optional(),
+        specialGuest: z.boolean(),
+        img: z.string(),
+      }),
+    ),
+    program: z.array(
+      z.object({
+        composer: z.string(),
+        title: z.array(z.string()),
+      }),
+    ),
     cardImg: z.string(),
     cardMonth: z.string(),
     cardDay: z.number(),
@@ -29,4 +33,3 @@ const blog = defineCollection({
 })
 
 export const collections = { blog }
-

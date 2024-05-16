@@ -1,14 +1,15 @@
 ---
 import ResponsiveToggle from './ResponsiveToggle.astro'
-import { DarkMode } from 'accessible-astro-components'
+import DarkModeToggle from '../components/DarkModeToggle.astro'
+import { Image } from 'astro:assets'
 // 412px-732px
 ---
 
 <div id="main-navigation" class="is-desktop py-8">
   <div class="container flex items-center">
     <a href="/" class="flex flex-row items-center gap-2 !no-underline" id="logo-title">
-      <img src={(await import('../assets/img/logo.svg')).default} alt="SAMF Logo" width="47" height="37" />
-      <span class="font-bold uppercase pb-1">St. Augustine Music Festival</span>
+      <Image src={(await import('../assets/img/logo.svg')).default} alt="SAMF Logo" width="47" height="37" />
+      <span class="pb-1 font-bold uppercase">St. Augustine Music Festival</span>
     </a>
     <div class="wrapper mb-1 flex justify-between">
       <nav class="desktop-menu" aria-label="Main navigation desktop">
@@ -17,7 +18,7 @@ import { DarkMode } from 'accessible-astro-components'
         </ul>
       </nav>
       <div class="flex flex-row gap-2 pl-3" id="mobile-menu-icons">
-        <DarkMode />
+        <DarkModeToggle />
         <ResponsiveToggle />
       </div>
     </div>
