@@ -19,7 +19,7 @@ program:
     title: ['Sextet in C major. Op. 37']
   - composer: 'Johannes Brahms'
     title: ['Serenade No. 1 in D, Op. 11 (Arr. by Jorge Rotter)']
-cardImg: '/event-assets/brahms-night.png/'
+cardImg: '/event-assets/brahms-night.png'
 cardMonth: 'June'
 cardDay: 24
 cardYear: 2023
@@ -41,7 +41,7 @@ export const {
 } = frontmatter
 import { Icon } from 'astro-icon'
 
-<div class="flex flex-col-reverse items-center lg:flex-row justify-between">
+<div class="flex flex-col-reverse items-center justify-between lg:flex-row">
     <div>
         <div class="flex flex-col gap-4 max-w-[560px] items-center lg:items-start text-center sm:text-left">
             **{venue}**
@@ -51,7 +51,7 @@ import { Icon } from 'astro-icon'
             {concertDay}, **{cardMonth} {cardDay}**, {cardYear} @ {concertTime}
             <div class="flex flex-col items-center sm:flex-row sm:gap-6">
                 <a
-                class="button has-icon color-secondary my-2 w-fit"
+                class="my-2 button has-icon color-secondary w-fit"
                 href="https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=LGYJBWLM3XKUA"
                 target="_blank"
                 >
@@ -59,7 +59,7 @@ import { Icon } from 'astro-icon'
                 Donate
                 </a>
                 <a
-                class="button has-icon color-secondary my-2 w-fit"
+                class="my-2 button has-icon color-secondary w-fit"
                 href="/"
                 target="_blank"
                 >
@@ -76,27 +76,27 @@ import { Icon } from 'astro-icon'
 
 </div>
 
-<div class="flex flex-col items-center lg:items-start lg:flex-row custom:justify-center custom:gap-5 post-custom:justify-start post-custom:gap-[13.5rem] py-8 border-b-2 border-neutral-900 dark:border-neutral-300 mb-10 lg:mb-12">
-    <div class="flex flex-col text-center lg:text-left">
-        ### Featured Artists
-        <div class="flex flex-col items-center sm:items-start sm:flex-row gap-10 my-4">
-            <div>
-                <img src={artists[0].img} alt={artists[0].name} class="w-[400px] h-[300px]" />
-                **{artists[0].name}**
-            </div>
-        </div>
+<div class="mb-10 flex flex-col items-center border-b-2 border-neutral-900 py-8 dark:border-neutral-300 lg:mb-12 lg:flex-row lg:items-start custom:justify-center custom:gap-5 post-custom:justify-start post-custom:gap-[13.5rem]">
+  <div class="flex flex-col text-center lg:text-left">
+    ### Featured Artists
+    <div class="my-4 flex flex-col items-center gap-10 sm:flex-row sm:items-start">
+      <div>
+        <img src={artists[0].img} alt={artists[0].name} class="h-[300px] w-[400px]" />
+        **{artists[0].name}**
+      </div>
     </div>
-    <div class="flex flex-col sm:text-center lg:text-left pt-6 lg:pt-0">
-        <h3 class="text-center xl:text-left">Program</h3>
-        <div class="flex flex-col gap-6 my-4 text-center post-custom:text-left">
-            {program.map((programItem, index) => (
-                 <div key={index}>
-                 <strong>{programItem.composer}</strong>
-                {programItem.title.map((titleItem, titleIndex) => (
-                 <p key={titleIndex}>{titleItem}</p>
-                 ))}
-             </div>
-            ))}
+  </div>
+  <div class="flex flex-col pt-6 sm:text-center lg:pt-0 lg:text-left">
+    <h3 class="text-center xl:text-left">Program</h3>
+    <div class="my-4 flex flex-col gap-6 text-center post-custom:text-left">
+      {program.map((programItem, index) => (
+        <div key={index}>
+          <strong>{programItem.composer}</strong>
+          {programItem.title.map((titleItem, titleIndex) => (
+            <p key={titleIndex}>{titleItem}</p>
+          ))}
         </div>
+      ))}
     </div>
+  </div>
 </div>

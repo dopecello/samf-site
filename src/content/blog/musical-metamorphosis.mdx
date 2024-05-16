@@ -19,7 +19,7 @@ program:
     title: ['Metamorphosen (Arr. by Rudolf Leopold 1996)']
   - composer: 'John Adams'
     title: ['Shaker Loops']
-cardImg: '/event-assets/music-meta.png/'
+cardImg: '/event-assets/music-meta.png'
 cardMonth: 'July'
 cardDay: 01
 cardYear: 2023
@@ -41,7 +41,7 @@ export const {
 } = frontmatter
 import { Icon } from 'astro-icon'
 
-<div class="flex flex-col-reverse items-center lg:flex-row justify-between">
+<div class="flex flex-col-reverse items-center justify-between lg:flex-row">
     <div>
         <div class="flex flex-col gap-4 max-w-[560px] items-center lg:items-start text-center sm:text-left">
             **{venue}**
@@ -51,7 +51,7 @@ import { Icon } from 'astro-icon'
             {concertDay}, **{cardMonth} {cardDay}**, {cardYear} @ {concertTime}
             <div class="flex flex-col items-center sm:flex-row sm:gap-6">
                 <a
-                class="button has-icon color-secondary my-2 w-fit"
+                class="my-2 button has-icon color-secondary w-fit"
                 href="https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=LGYJBWLM3XKUA"
                 target="_blank"
                 >
@@ -59,7 +59,7 @@ import { Icon } from 'astro-icon'
                 Donate
                 </a>
                 <a
-                class="button has-icon color-secondary my-2 w-fit"
+                class="my-2 button has-icon color-secondary w-fit"
                 href="/"
                 target="_blank"
                 >
@@ -79,14 +79,14 @@ import { Icon } from 'astro-icon'
 <div class="flex flex-col items-center lg:items-start lg:flex-row custom:justify-center custom:gap-5 post-custom:justify-start post-custom:gap-[13.5rem] py-8 border-b-2 border-neutral-900 dark:border-neutral-300 mb-10 lg:mb-12">
     <div class="flex flex-col text-center lg:text-left">
         ### Featured Artists
-        <div class="flex flex-col items-center sm:items-start sm:flex-row gap-10 my-4">
+        <div class="flex flex-col items-center gap-10 my-4 sm:items-start sm:flex-row">
             <div>
                 <img src={artists[0].img} alt={artists[0].name} class="w-[400px] h-[300px]" />
                 **{artists[0].name}**
             </div>
         </div>
     </div>
-    <div class="flex flex-col sm:text-center lg:text-left pt-6 lg:pt-0">
+    <div class="flex flex-col pt-6 sm:text-center lg:text-left lg:pt-0">
         <h3 class="text-center xl:text-left">Program</h3>
         <div class="flex flex-col gap-6 my-4 text-center post-custom:text-left">
             {program.map((programItem, index) => (
